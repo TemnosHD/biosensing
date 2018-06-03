@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Network Motifs</title>
+
+		<meta name="description" content="Understanding Biology Through Mathematics">
+		<meta name="author" content="Laura Martens & Arthur Heimbrecht">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="img/network3.png" data-state="img-transparent" id="title">
+					<div class="bodyneeded">
+						<h1>Network Motifs</h1>
+						<h3>Understanding Biology through Mathematics</h3>
+						<p>
+							<small class="subtitle">presented by Laura Martens & Arthur Heimbrecht</small>
+						</p>
+					</div>
+				</section>
+				<section id="themes">
+					<h2>Choose-a-Theme</h2>
+					<p>
+						reveal.js comes with a few themes built in: <br>
+						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon(default)</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+					</p>
+				</section>
+
+				<section>
+					<h2>Contents</h2>
+					<ol>
+						<li><a href="#/introduction">Introduction</a></li>
+						<li><a href="#/biology">Biology</a></li>
+						<li><a href="#/largenetworks">Large Networks</a></li>
+						<li><a href="#/conclusion">Conclusion & Outlook</a></li>
+					</ol>
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				<section id="introduction">
+					<section>
+						<h2>Introduction</h2>
+					</section>
+					<section>
+						<div class="row">
+							<h3>Introduction</h3>
+							<div class="column">
+								<p>This is some example text for a slide, like blablabla and stuff, ya know</p>
+								also here is a bullet list: <br>
+								<ul>
+									<li>number one</li>
+									<li>two</li>
+									<li>and da three</li>
+									<li>...</li>
+									<li>don't forget the four</li>
+								</ul>
+							</div>
+						  	<div class="column">
+								<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="row">
+							<h3>Introduction</h3>
+							<div class="column">
+								<p>This is some example text for a slide, like blablabla and stuff, ya know</p>
+								also here is a bullet list: <br>
+								<ul>
+									<li>number one</li>
+									<li>two</li>
+									<li>and da three</li>
+									<li>...</li>
+									<li>don't forget the four</li>
+									<li>don't forget the four</li>
+									<li>don't forget the four</li>
+									<li>don't forget the four</li>
+									<li>don't forget the four</li>
+									<li>don't forget the four</li>
+								</ul>
+							</div>
+						  	<div class="column">
+								<img width="400" height="600" data-src="img/network2.jpg" alt="Down arrow">
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section id="biology">
+					<section>
+						<h2>Biology</h2>
+						<p>Buzzers, Sniffers, Switches, Blinkers</p>
+					</section>
+					<section>
+						<h2>Buzzer</h2>
+						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+					</section>
+					<section>
+						<h2>Sniffers</h2>
+						<p>That's it, time to go back up.</p>
+					</section>
+					<section>
+						<h2>Switches</h2>
+						<p>That's it, time to go back up.</p>
+					</section>
+					<section>
+						<h2>Blinkers</h2>
+						<p>That's it, time to go back up.</p>
+					</section>
+				</section>
+
+				<section id="largenetworks">
+					<section>
+						<h2>Large Networks</h2>
+					</section>
+				</section>
+
+				<section id="conclusion">
+					<section>
+						<h2>Conclusion & Outlook</h2>
+					</section>
+				</section>
+
+				<section id="end">
+					<h2>Thank you for listening!</h2>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+						## Markdown support
+
+						Write content using inline or external Markdown.
+						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+						```
+						<section data-markdown>
+						  ## Markdown support
+
+						  Write content using inline or external Markdown.
+						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+						</section>
+						```
+					</script>
+				</section>
+
+				<section>
+					<section id="fragments">
+						<h2>Fragments</h2>
+						<p>Hit the next arrow...</p>
+						<p class="fragment">... to step through ...</p>
+						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+
+						<aside class="notes">
+							This slide has fragments which are also stepped through in the notes window.
+						</aside>
+					</section>
+					<section>
+						<h2>Fragment Styles</h2>
+						<p>There's different types of fragments, like:</p>
+						<p class="fragment grow">grow</p>
+						<p class="fragment shrink">shrink</p>
+						<p class="fragment fade-out">fade-out</p>
+						<p class="fragment fade-up">fade-up (also down, left and right!)</p>
+						<p class="fragment current-visible">current-visible</p>
+						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
+					</section>
+				</section>
+
+				<section id="transitions">
+					<h2>Transition Styles</h2>
+					<p>
+						You can select from different transitions, like: <br>
+						<a href="?transition=none#/transitions">None</a> -
+						<a href="?transition=fade#/transitions">Fade</a> -
+						<a href="?transition=slide#/transitions">Slide</a> -
+						<a href="?transition=convex#/transitions">Convex</a> -
+						<a href="?transition=concave#/transitions">Concave</a> -
+						<a href="?transition=zoom#/transitions">Zoom</a>
+					</p>
+				</section>
+
+
+				<section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+						<h2>Image Backgrounds</h2>
+						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+					</section>
+					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h2>Video Backgrounds</h2>
+							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						</div>
+					</section>
+					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+						<h2>... and GIFs!</h2>
+					</section>
+				</section>
+
+				<section>
+					<h2>Speaker View</h2>
+					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+					<p>Press the <em>S</em> key to try it out.</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				slideNumber: true,
+				history: false,
+				width: 1920,
+				height: 1080,
+				viewDistance: 3,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+			
+			// Slide number formatting can be configured using these variables:
+			//  "h.v": 	horizontal . vertical slide number (default)
+			//  "h/v": 	horizontal / vertical slide number
+			//    "c": 	flattened slide number
+			//  "c/t": 	flattened slide number / total slides
+			Reveal.configure({ slideNumber: 'c' });
+			
+			// Control which views the slide number displays on using the "showSlideNumber" value:
+			//     "all": show on all views (default)
+			// "speaker": only show slide numbers on speaker notes view
+			//   "print": only show slide numbers when printing to PDF
+			//Reveal.configure({ showSlideNumber: 'speaker' });
+
+		</script>
+
+	</body>
+</html>
