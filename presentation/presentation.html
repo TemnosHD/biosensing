@@ -49,11 +49,12 @@
 						</p>
 					</div>
 				</section>
-				<section id="themes">
+				<!-- <section id="themes">
 					<h2>Choose-a-Theme</h2>
 					<p>
 						reveal.js comes with a few themes built in: <br>
 						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+                <!--
 						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a> -
 						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
 						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
@@ -66,7 +67,7 @@
 						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon(default)</a> -
 						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
 					</p>
-				</section>
+				</section> -->
 
 				<section>
 					<h2>Contents</h2>
@@ -82,52 +83,83 @@
 				</section>
 
 				<section id="introduction">
+                    
+                    <!-- Folie 1 -->
 					<section>
 						<h2>Introduction</h2>
 					</section>
-					<section>
+                    
+                    <!-- Folie 2 -->
+					<section data-transition="slide">
 						<div class="row">
-							<h3>Introduction</h3>
-							<div class="column">
-								<p>This is some example text for a slide, like blablabla and stuff, ya know</p>
-								also here is a bullet list: <br>
-								<ul>
-									<li>number one</li>
-									<li>two</li>
-									<li>and da three</li>
-									<li>...</li>
-									<li>don't forget the four</li>
-								</ul>
-							</div>
-						  	<div class="column">
-								<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-							</div>
+							<h3>What are network motifs?</h3>
+                            
+								 <ul> 
+                                    <li> <p class="fragment fade-up"> basic interaction patterns that recur throughout biological networks <br> much more often than in random networks </p> </li> 
+                                 </ul> 
+                            
+                                <p class="fragment current-visible"> <img width="591" height="360" data-src="img/Laura/motif.png" alt="Down arrow"> </p>
+                            
 						</div>
 					</section>
-					<section>
+                    
+                    <!-- Folie 2 continued-->
+                    
+                    <section data-transition="slide">
 						<div class="row">
-							<h3>Introduction</h3>
-							<div class="column">
-								<p>This is some example text for a slide, like blablabla and stuff, ya know</p>
-								also here is a bullet list: <br>
-								<ul>
-									<li>number one</li>
-									<li>two</li>
-									<li>and da three</li>
-									<li>...</li>
-									<li>don't forget the four</li>
-									<li>don't forget the four</li>
-									<li>don't forget the four</li>
-									<li>don't forget the four</li>
-									<li>don't forget the four</li>
-									<li>don't forget the four</li>
-								</ul>
-							</div>
-						  	<div class="column">
-								<img width="400" height="600" data-src="img/network2.jpg" alt="Down arrow">
-							</div>
+                            
+							<div class="column">	 
+
+                                <h3> Random network</h3>
+                                <br>
+
+                                <p> <img width="570" height="527" data-src="img/Laura/random_network.png" alt="Down arrow"> </p>
+                            </div>
+                            <div class="column" class = "fragment fade-up" >	 
+                                <h3 > Real network</h3>
+                                <br>
+                                <p > <img width="570" height="527" data-src="img/Laura/real_network.png" alt="Down arrow"> </p>
+                            </div>
+                            
 						</div>
 					</section>
+                    
+                    <!-- Folie 3 -->
+					<section>
+						<div class="row">
+							<h3>Network motifs as building blocks</h3> <br>
+                            <ul>                    
+                                <p> Each network has a defined function: e.g. filters, pulse generators </p>
+                                <p> Small set of network motifs serve as bulding blocks of:</p>
+                            </ul>
+
+							<ul>
+                                <li class = "fragment" data-fragment-index= "1">  
+                                  <span class = "fragment highlight-blue" data-fragment-index= "5"> transcription networks </span> 
+                                  <span>from bacteria to mammals</span> </li>
+                                <li class = "fragment" data-fragment-index= "2" > 
+                                    neuronal networks </li>
+                                <li class = "fragment" data-fragment-index= "3" > 
+                                    World Wide Web </li>
+                                <li class = "fragment" data-fragment-index= "4" > 
+                                    signal transduction networks </li>
+                                
+                            </ul>
+						</div>
+					</section>
+                     <!-- Folie 4 -->
+                    
+                    <section data-background-video=  "https://www.youtube.com/embed/gG7uCskUOrA?list=PLOZ55MwDaD9WoxSHQvvyOw64pcauGUBJN&amp;ecver=2" >
+						<div class="row">
+							<h3>Transcription networks</h3> <br>
+                            <ul>                    
+                                <p> Video??</p>
+                                
+                            </ul>
+
+						</div>
+					</section>
+
 				</section>
 
 				<!-- Example of nested vertical slides -->
