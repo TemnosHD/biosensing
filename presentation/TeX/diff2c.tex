@@ -1,0 +1,17 @@
+% arara: pdflatex
+% arara: convert
+
+\documentclass[preview]{standalone}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\begin{document}
+\pagestyle{empty}
+\begin{equation*}
+\begin{aligned}
+	\frac{dR}{dt} & = {\color{blue}\boxed{\color{black} [k_0' + k_0 E_P(R)] \cdot X - k_2 R}} \\ 
+	\frac{dX}{dt} & = {\color{red}\boxed{\color{black} k_1 S - [k_0' + k_0 E_P(R)] \cdot X}} \\ 
+	E_P(R) & = G(k_3 R, k_4, J_3, J_4)
+\end{aligned}
+\end{equation*}
+\vfill
+\end{document}

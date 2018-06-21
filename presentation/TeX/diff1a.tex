@@ -1,0 +1,16 @@
+% arara: pdflatex
+% arara: convert
+
+\documentclass[preview]{standalone}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\begin{document}
+\pagestyle{empty}
+\begin{equation*}
+\begin{aligned}
+	\frac{dR}{dt} & = {\color{blue}\boxed{\color{black}k_0 + k_1S}} - \color{red}{\boxed{\color{black}k_2R}} \\ 
+	R_{SS} & = \frac{k_0 + k_1S}{k_2}
+\end{aligned}
+\end{equation*}
+\vfill
+\end{document}

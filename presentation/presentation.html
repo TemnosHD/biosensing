@@ -58,25 +58,6 @@
 						</p>
 					</div>
 				</section>
-				<!-- <section id="themes">
-					<h2>Choose-a-Theme</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-                <!--
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon(default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section> -->
 
                 
 <!--Contents-->     
@@ -214,22 +195,122 @@
 					<section data-background="img/Laura/dna2.jpg" data-state="img-transparent" >
 						<h2>Mathematical models</h2>
 <!--						<p>Buzzers, Sniffers, Switches, Blinkers</p>-->
+						<aside class="notes">
+							Now we will get to the part, that all non-physicists were anticipating. We will about the mathematical models that describe network motifs quantitatively. But we will also talk about the qualitative aspects of certain network motifs and which functions they bring to a network.
+						</aside>
+					</section>
+					<section>
+						<h2>Preliminary example</h2>
+						<iframe data-src="http://localhost:5006/diagram1a", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<aside class="notes">
+							But first let's talk about a simple example.
+							You see we are given a first order differential equation that describes the wire diagram on the top left.
+							Let's look at that wire diagram first:
+							There are two Quantities - a Signal S and a Response R- that are correlated by those "wires" in between.
+							Solid represent either the increase of the quantity they are pointing to or the decrease of the quantity which they are pointing away from.
+							This would mean in a biological sense that protein R is synthesized through an arrow pointing to it and degraded by an arrow pointing away.
+							Now there is also a second type of arrow, which is dashed. The dashed arrow means that one quantity influences a solid arrow in its magnitude.
+							Again, speaking in a biological sense this means that one protein (the signal) influences the synthetization rate of the response protein.
+							This information is combined in a short differential equation that takes the aggregation into account (blue) and the depletion (red).
+							For your understanding: k0 is a base aggregation rate and the depletion always needs some R to be present in order to deplete it.
+
+							Since the DE qualifies as an ODE we can solve it quite easily, which gives us the so called 'steady state' below.
+							This depends only on the coefficients...and the Signal S.
+							The plot to the right shows the calculated steady state solution and you can observe a linear dependency between the Signal and the steady state of the response.
+							Keep in mind that these steady states are stable and as such the response will always tend towards the steady state for each signal, no matter what the current value of the response is.
+
+							In this graph we can play around a little and change the values of some variables and as you can see, an increase in aggregation rate causes the response curve to be steeper while an increase of the depletion rate causes the opposite.
+							In the left graph you can see how these effects are caused.
+							The point in which both the aggregation rate and the depletion rate meet is the steady state since aggregation and depletion are equally large and thus dR/dt is zero. When changing the coefficients of each curve we observe the expected behavior.
+							The steady state moves along both lines as the blue line changes due to the signal.
+
+							This is the point I want to ask you if there are any questions concerning these principles.
+							It is very important that you understand this very visualization in its entirety in order to be able to understand what is about to come.
+
+							[answer questions]
+
+							Now we will see, where to go from here.
+							If you have any questions regarding those plots please do not hesitate to ask right away.
+						</aside>
+					</section>
+					<section>
+						<h2>Biological example</h2>
+						<iframe data-src="http://localhost:5006/diagram1b", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<aside class="notes">
+							Since this seminar also features biologists I want to present you another preliminary example that is actually taken from biology.
+							And which process to choose but phosphorylization. The motor of our cells.
+							What we observe in the wire diagram is the phosphorylization of our response protein such that is becomes RP.
+							This uses up ATP and is controlled by a signal protein.
+							Under the presence of water our phosphorylated protein looses the phosphor ion and goes back to its original state.
+							If we put this into formulas we see that the rate of phosphorylation depends on the amount of unphorphorylated protein. We describe this with the difference of all protein that is present minus the phosphorylated amount.
+							Please be careful as we are interested in the amount of phosphorylated protein RP not R. So all graphs that say R do in fact mean RP.
+							On the left graph you can see the aggregation curve and the depletion curve respectively and the point where they meet, which is the steady state.
+
+							Again we are given an ODE and can solve for R such that we get our steady state, which is plotted on the right hand side.
+
+							If we compare this to the previous graph we see that the fact that the aggregation is not constant anymore, but depends on R as well gives us a hyperbolic shape.
+
+							So, quick question to all biologists in the room, do you use this model for any calculations? Since obviously it is quite simplified.
+							That is why we also have the more accurate model that is governed by Michaelis-Menten kinetics.
+							It simply takes into account that rates can max out for processes no matter how strong the signal.
+						</aside>
 					</section>
 					<section>
 						<h2>Buzzer</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<iframe data-src="http://localhost:5006/diagram1c", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<aside class="notes">
+							So now we are at the point where we can describe actual processes in biology.
+
+							First of, we see that the differential equation is tweaked by a denominator that consits of the Michaelis factor which is constant and also the same variable as in the numerator.
+							This causes the rates to take on a hyperbolic shape.
+							Although this is no longer an ODE we can still solve it... or rather look up the solution on the internet or in a paper and we are given the solution below the equation. The so called 'Goldbeter-Koshland' function.
+							You don't need to remember this equation exactly although we will use is wuite often. But you should remember that is has a sigmoidal shape similar to x/sqrt(1+x^2).
+							But most important: sigmoidal shape!
+							Again we can play around a bit and see what different coefficients cause on the plot.
+							But let's look further into the shape of our steady state solution.
+							As you may have noticed or already know, the sigmoid function if often used in machine learning for instance, since its shape is quite beneficial.
+							For low signals we have a rather constant low response and for large signals we have a relatively constant large response. In between there is a steep ascent.
+
+							Because this function is in its properties relatively similar to a button -like on a doorbell- that there is no response when the button is not pressed but a constant response if the button is pressed.
+							Because of this, this network motif is also called a 'Buzzer'.
+
+						</aside>
 					</section>
 					<section>
 						<h2>Sniffers</h2>
-						<p>That's it, time to go back up.</p>
+						<iframe data-src="http://localhost:5006/diagram1d", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<aside class="notes">
+						</aside>
 					</section>
 					<section>
-						<h2>Switches</h2>
-						<p>That's it, time to go back up.</p>
+						<h2>Irreversible switch</h2>
+						<iframe data-src="http://localhost:5006/diagram1e", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<aside class="notes">
+						</aside>
 					</section>
 					<section>
-						<h2>Blinkers</h2>
-						<p>That's it, time to go back up.</p>
+						<h2>Reversible switch</h2>
+						<iframe data-src="http://localhost:5006/diagram1f", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<aside class="notes">
+						</aside>
+					</section>
+					<section>
+						<h2>Blinker</h2>
+						<iframe data-src="http://localhost:5006/diagram2a", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<aside class="notes">
+						</aside>
+					</section>
+					<section>
+						<h2>Positive Feedback oscillator</h2>
+						<iframe data-src="http://localhost:5006/diagram2b", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<aside class="notes">
+						</aside>
+					</section>
+					<section>
+						<h2>Negative Feedback oscillator</h2>
+						<iframe data-src="http://localhost:5006/diagram2c", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<aside class="notes">
+						</aside>
 					</section>
 				</section>
                 
@@ -409,94 +490,6 @@
                 
                 </section>
 
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment fade-up">fade-up (also down, left and right!)</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-
-				<section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
 			</div>
 
 		</div>
@@ -514,7 +507,6 @@
 				center: true,
 
 				slideNumber: true,
-				history: false,
 				width: 1920,
 				height: 1080,
 				viewDistance: 3,
