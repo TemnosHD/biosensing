@@ -30,7 +30,10 @@
 		</script>
         <style type="text/css">
             .inner {
-              position: absolute; right: 100px; bottom: 50px
+              position: absolute; right: 100px; bottom: -30px
+            }
+            .inner_2 {
+              position: absolute; margin: 0 auto;
             }
 
         </style>
@@ -46,7 +49,7 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-background="img/network4.png" data-state="img-transparent" id="title">
+				<section data-background="img/network3.png" data-state="img-transparent" id="title">
 					<div class="bodyneeded">
 						<h1>Network Motifs</h1>
 						<h3>Understanding Biology through Mathematics</h3>
@@ -75,19 +78,23 @@
 					</p>
 				</section> -->
 
+                
+<!--Contents-->     
+                
 				<section >
 					<h2>Contents</h2>
-					<ol>
-						<li><a href="#/introduction">Introduction</a></li>
-						<li><a href="#/biology">Biology</a></li>
-						<li><a href="#/largenetworks">Large Networks</a></li>
-						<li><a href="#/conclusion">Conclusion & Outlook</a></li>
-					</ol>
+                    <p>Introduction</p>
+                    <p>Biology</p>
+                    <p>Large Networks</p>
+                    <p>Conclusion & Outlook</p>
+                    
 					<aside class="notes">
 						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
 					</aside>
 				</section>
 
+<!--Introduction-->                
+                
 				<section id="introduction">
                     
                     
@@ -118,7 +125,7 @@
                             <div class="column" class = "fragment fade-up" >	 
                                 <h2 > Real network</h2>
                                 <br>
-                                <img width="570" height="527" data-src="img/Laura/real_network.png" alt="Down arrow">
+                                <img width="533" height="527" data-src="img/Laura/random_selfmade.png" alt="Down arrow">
                                 
                                 <img class = "fragment" width="200" height="184" data-src="img/Laura/Pfeil.png" style="background:none; border:none; box-shadow:none; position: absolute; left:860px; top:350px" data-fragment-index= "2">
                             </div>
@@ -126,7 +133,7 @@
                             <div class="column" class = "fragment" data-fragment-index= "1">	 
                                 <h2> Random network</h2>
                                 <br>
-                                <img width="570" height="527" data-src="img/Laura/random_network.png" alt="Down arrow">      
+                                <img width="533" height="527" data-src="img/Laura/real_selfmade.png" alt="Down arrow">      
                             </div>
                             
                             
@@ -157,57 +164,43 @@
                     <section>
                     
                          <div style = "position:absolute; top:20px;">
-                            <img width="885" height="500" data-src="img/Laura/transcription_network.png" style="background:none; border:none; box-shadow:none;" >
-                            <img width="885" height="500" data-src="img/Laura/neurons.png" style="background:none; border:none; box-shadow:none;" >
-                            <img width="885" height="500" data-src="img/Laura/www.png" style="background:none; border:none; box-shadow:none; " >
+                            <img class = "fragment grow" data-fragment-index = "1" width="885" height="500" data-src="img/Laura/transcription_network.png" style="background:none; border:none; box-shadow:none;" >
+                            <img class = "fragment shrink" data-fragment-index = "1" width="885" height="500" data-src="img/Laura/neurons.png" style="background:none; border:none; box-shadow:none;" >
+                            <img class = "fragment shrink" data-fragment-index = "1" width="885" height="500" data-src="img/Laura/www.png" style="background:none; border:none; box-shadow:none; " >
                         </div>
                     </section>
 
                     
                      <!-- Folie 4 -->
                     
-                    <section data-background-video=  "https://www.youtube.com/embed/gG7uCskUOrA?list=PLOZ55MwDaD9WoxSHQvvyOw64pcauGUBJN&amp;ecver=2" >
-						<div class="row">
-							<h2>Transcription networks</h2> <br>
-                            <ul>                    
-                                <p> Video??</p>
-                                
-                            </ul>
+                    <section>
+						
+							<h2>Transcription networks</h2> 
+                            <img width="952" height="750" data-src="img/Laura/trans_trans.png" style="background:none; border:none; box-shadow:none;" >
 
-						</div>
+						
 					</section>
                     
-<!--
                     <section>
-                       <div class = "row" >
-                            <h3>Evolution of network motifs</h3>
-                            <p>How and why did these distinct patterns evolve?</p>
-                            <ul>
-                                <li>Cellular biochemical networks have to function in a noisy environment using imperfect components
-                                </li>
-                                
-                                <li>Gene regulation networks allow only for small output tolerances <br> <span class = "fragment highlight-red">&rarr; </span>Errors can lead to wrong development and behavioural decisions 
-                                </li>
-                                <li>Selective pressure towards networks showing intrinsic robustness
-                                </li>
-                                <br>
-                                <span class = "fragment highlight-green">&rarr; </span> Network motifs are the simplest and most robust circuits that perform these defined functions
-                                
-                                
-                            
                         
-                        </ul>
-                           
-                        </div>
+                        <h2>Activators and repressors</h2>
+                        <div style = "position: absolute; left: 450px; bottom:auto"><img class = "fragment current-visible" data-fragment-index = "0" width="996" height="525" data-src="img/Laura/activator.png" style="background:none; border:none; box-shadow:none;" ></div>
+                        <div style = "position: absolute; left: 180px;"><img class = "fragment" data-fragment-index = "1" width="1572" height="400" data-src="img/Laura/repressor.png" style="background:none; border:none; box-shadow:none;" ></div>
                     
                     </section>
--->
+                    
+                   
                     
                     <!-- Folie 5 -->
                     <section><h2>Evolution of network motifs</h2></section>
                     <section>
 
-                            <img width="1807" height="980" data-src="img/Laura/Evolution.png" style="background:none; border:none; box-shadow:none;" >
+                            <div class = "inner_2"><img  width="1810" height="980" data-src="img/Laura/Evolution_1.png" style="background:none; border:none; box-shadow:none;" ></div>
+                            <div class = "inner_2"><img class = "fragment"  width="1810" height="980" data-src="img/Laura/Evolution_2.png" style="background:none; border:none; box-shadow:none;" ></div>
+                            <div class = "inner_2"><img class = "fragment"  width="1810" height="980" data-src="img/Laura/Evolution_3.png" style="background:none; border:none; box-shadow:none;" ></div>
+                            <div class = "inner_2"><img class = "fragment"  width="1810" height="980" data-src="img/Laura/Evolution_4.png" style="background:none; border:none; box-shadow:none;" ></div>
+                            <div class = "inner_2"><img class = "fragment"  width="1810" height="980" data-src="img/Laura/Evolution.png" style="background:none; border:none; box-shadow:none;" ></div>
+                    
 
                     </section>
                     
@@ -215,11 +208,12 @@
 
 				</section>
 
-				<!-- Example of nested vertical slides -->
+<!--Mathematical models-->   
+                
 				<section id="biology">
-					<section data-background="img/Laura/Clifford.png" data-state="img-transparent">
-						<h2>Biology</h2>
-						<p>Buzzers, Sniffers, Switches, Blinkers</p>
+					<section data-background="img/Laura/dna2.jpg" data-state="img-transparent" >
+						<h2>Mathematical models</h2>
+<!--						<p>Buzzers, Sniffers, Switches, Blinkers</p>-->
 					</section>
 					<section>
 						<h2>Buzzer</h2>
@@ -254,8 +248,8 @@
                     <section>
 						<h2>Logic operators</h2>
                         <p>There are different ways how X and Y can be integrated to regulate the Z promoter</p>
-                        <img  width="134.4" height="150" data-src="img/Laura/Pfeil_unten.png" style="background:none; border:none; box-shadow:none;" >
-                        <p>Two common input functions are the <span class = "fragment highlight-blue"><strong> AND </strong> </span> gate and <span class = "fragment highlight-green"><strong> OR </strong> </span> gate. </p>
+                        <span class = "fragment" data-fragment-index= "1"><img  width="134.4" height="150" data-src="img/Laura/Pfeil_unten.png" style="background:none; border:none; box-shadow:none;" >
+                        <p>Two common input functions are the <span class = "fragment highlight-blue" data-fragment-index= "2"><strong> AND </strong> </span> gate and <span class = "fragment highlight-green" data-fragment-index= "3"><strong> OR </strong> </span> gate. </p></span>
 					</section>
                     
                     <!-- Folie 3 -->
@@ -304,35 +298,34 @@
                             <ol>
                              
 
-                                    <li>Create a network with same number of nodes as has the real network</li>
-                                    <li>Assign the same number of incoming and outgoing edges to each node <br> as has the corresponding node in the real network</li>
-                                    <li> Scan network for all possible n-node subgraphs and record the number <br> of occurrences of each subgraph </li>
-                                    <li>Compare probabilities &rarr; cut-off probability </li>
+                                    <li class = "fragment grow" data-fragment-index= "1"> Create a network with same number of nodes as has the real network</li>
+                                    <li class = "fragment grow" data-fragment-index= "2"> Assign the same number of incoming and outgoing edges to each node <br> as has the corresponding node in the real network</li>
+                                    <li class = "fragment grow" data-fragment-index= "4"> Scan network for all possible n-node subgraphs and record the number <br> of occurrences of each subgraph </li>
+                                    <li class = "fragment grow" data-fragment-index= "5">Compare probabilities &rarr; cut-off probability </li>
 
                             </ol>
                         </div>
                         <div class = "column">
                                
                             <div>
-                                <div class="inner" ><img width="591" height="360" data-src="img/Laura/motif.png" ></div>
+                                <div class="inner" ><img class = "fragment" data-fragment-index= "1" width="533" height="527" data-src="img/Laura/step1.png" ></div>
                                 
-                                <div class="inner"><img class = "fragment" width="591" height="360" data-src="img/Laura/real_network.png" alt="Down arrow"></div>
+                                <div class="inner"><img class = "fragment" data-fragment-index= "2" width="533" height="527" data-src="img/Laura/step2.png" alt="Down arrow"></div>
                                 
-                                <div class="inner"><img class = "fragment" width="591" height="360" data-src="img/Laura/random_network.png" alt="Down arrow"></div>
+                                <div class="inner"><img class = "fragment" data-fragment-index= "3" width="533" height="527" data-src="img/Laura/step3.png" alt="Down arrow"></div>
+                                <div class="inner"><img class = "fragment" data-fragment-index= "4" width="533" height="527" data-src="img/Laura/random_selfmade.png" alt="Down arrow"></div>
                             
                             </div>
 
                         </div>
                     </div>
                     </section>
-                    
-                    
-                    
-                    
-				</section>
+                    </section>
+            
+<!-- Conclusion & Outlook --> 
 
 				<section id="conclusion">
-					<section>
+					<section data-background="img/Laura/cell.jpg" data-state="img-transparent" >
 						<h2>Conclusion & Outlook</h2>
 					</section>
 				</section>
@@ -340,6 +333,57 @@
 				<section id="end">
 					<h2>Thank you for listening!</h2>
 				</section>
+                
+<!-- Literature -->
+                <section>
+                <section>
+                <div class = "row">
+                <h2>Literature</h2>
+                    <ul>
+                        <li>Alon, Uri. "Network motifs: theory and experimental approaches." <em>Nature Reviews Genetics</em> 8.6 (2007): 450.</li>
+                        <li>Tyson, John J., Katherine C. Chen, and Bela Novak. "Sniffers, buzzers, toggles and blinkers: dynamics of regulatory and signaling pathways in the cell." <em>Current opinion in cell biology</em> 15.2 (2003): 221-231.</li>
+                        <li>Milo, Ron, et al. "Network motifs: simple building blocks of complex networks." <em>Science</em> 298.5594 (2002): 824-827.</li>
+                        <li>Phillips, Rob. "Napoleon is in equilibrium." <em>Annu. Rev. Condens. Matter Phys.</em> 6.1 (2015): 85-111.</li>
+                        <li>Kalir, Shiraz, Shmoolik Mangan, and Uri Alon. "A coherent feed‐forward loop with a SUM input function prolongs flagella expression in Escherichia coli." <em>Molecular systems biology</em> 1.1 (2005).</li>
+                        <li>Kollmann, Markus, et al. "Design principles of a bacterial signalling network." <em>Nature</em> 438.7067 (2005): 504.</li>
+                        <li>Zaslaver, Alon, et al. "A comprehensive library of fluorescent transcriptional reporters for Escherichia coli." <em>Nature methods</em> 3.8 (2006): 623.</li>
+                        <li>Uri Alon. "Network Motifs." URL: https://www.weizmann.ac.il/mcb/UriAlon/research/network-motifs (19.06.2018) </li>
+                    </ul>
+                </div>
+                </section>
+                    
+            
+                
+                
+<!-- Pictures -->
+                
+                <section>
+                    <h2>Pictures</h2>
+                    <div class = "row">
+                        <div class = "column">
+                        
+                           <img width="400" height="314" data-src="img/Laura/trans_trans.png" style="background:none; border:none; box-shadow:none;" > 
+                            <img  data-fragment-index = "0" width="500" height="250" data-src="img/Laura/activator.png" style="background:none; border:none; box-shadow:none;" >
+                            <img  width="974" height="250" data-src="img/Laura/repressor.png" style="background:none; border:none; box-shadow:none;" >
+                        
+                        </div>
+                        <div style = "position:absolute; left:1000px; top:350px" >
+                            <p>Phillips, Rob. "Napoleon is in equilibrium." <em>Annu. Rev. Condens. Matter Phys.</em> 6.1 (2015): 85-111.</p>
+                        </div>
+                    
+                    
+                    </div>
+                
+                </section>
+                <section>
+                    <div class = "row">
+                        <div class = "column">
+                            
+                        </div>
+                    </div>
+                </section>
+                
+                </section>
 
 
 				<section data-markdown>

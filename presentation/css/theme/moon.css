@@ -45,7 +45,6 @@ body {
 .reveal h1,
 .reveal h2,
 .reveal h3,
-.reveal h4,
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
@@ -79,7 +78,7 @@ body {
 .reveal p {
   margin: 20px 0;
   line-height: 1.3;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 /* Ensure certain elements are never larger than the slide itself */
