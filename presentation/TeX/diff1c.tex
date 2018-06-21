@@ -1,0 +1,17 @@
+% arara: pdflatex
+% arara: convert
+
+\documentclass[preview]{standalone}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\begin{document}
+\pagestyle{empty}
+\begin{equation*}
+\begin{aligned}
+	\frac{dR_P}{dt} & = {\color{blue}\boxed{\color{black} \frac{k_1 S (R_T - R_P)}{K_{m1} + R_T -R_P}}} - \color{red}{\boxed{\color{black} \frac{k_2 R_P}{K_{m2}+R_P}}} \\ 
+	R_{P, SS} & = G(k_1, S, k_2, \frac{K_{m1}}{R_T}, \frac{K_m2}{R_T}) \cdot R_T \\
+	G(u, v, J, K) & = \frac{2uK}{v - u + vJ + uK + \sqrt{(v - u + vJ + uK)^2 - 4(v - u)uK}}
+\end{aligned}
+\end{equation*}
+\vfill
+\end{document}

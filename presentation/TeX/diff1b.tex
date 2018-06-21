@@ -1,0 +1,16 @@
+% arara: pdflatex
+% arara: convert
+
+\documentclass[preview]{standalone}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\begin{document}
+\pagestyle{empty}
+\begin{equation*}
+\begin{aligned}
+	\frac{dR_P}{dt} & = {\color{blue}\boxed{\color{black}k_1 S (R_T - R_P)}} - \color{red}{\boxed{\color{black}k_2 R_P}} \\ 
+	R_{P, SS} & = \frac{R_T S}{(k_2/k_1) + S}
+\end{aligned}
+\end{equation*}
+\vfill
+\end{document}
