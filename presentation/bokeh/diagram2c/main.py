@@ -27,4 +27,4 @@ c2 = plotter_osc(RX, RX0, _S_0=0.2,
                 _N=600, _Rmax=1.6, _Rmin=0, _Smax=0.5, _Smin=0, _Xmax=7, _title='Figure 2c', _quivleng=10)
 
 
-b2.show_server()
+c2.show_server()
