@@ -65,7 +65,7 @@
 				<section >
 					<h2>Contents</h2>
                     <p>Introduction</p>
-                    <p>Mathematical models</p>
+                    <p>Mathematical Msodels</p>
                     <p>Large Networks</p>
                     <p>Conclusion & Outlook</p>
                     
@@ -98,7 +98,7 @@
                                     <li> <p class="fragment fade-up"> basic interaction patterns that recur throughout biological and non-biological networks much more often than in random networks </p> </li> 
                                  </ul> 
                             
-                                <p class="fragment current-visible"> <img width="715" height="400" data-src="img/Laura/motif2.png" style="background:none; border:none; box-shadow:none;" > </p>
+                                <p class="fragment"> <img width="715" height="400" data-src="img/Laura/motif2.png" style="background:none; border:none; box-shadow:none;" > </p>
                             
 						</div>
                         <aside class = "notes">
@@ -117,7 +117,8 @@
                     <!-- Folie 2 continued-->
                     
                     <section data-transition="slide">
-						<div class="row">
+						
+                        <div class="row">
                             
                             <div class="column" class = "fragment fade-up" >	 
                                 <h2 > Real network</h2>
@@ -221,7 +222,7 @@
                             as the transcripion proteins themselve arise from a transcription -translation process it can form interesting dynamics in the form of a transription regulation network. 
                             They can mathematically described by setting up differential equation with the reaction rates k as Arthur..
                             
-                            We have seen that in biologcical networks (Trans and neurons) the same network motifs have evolved, which gives rise to the question....
+                            We have seen that in biologcical networks (Trans and neurons) the same network, which gives rise to the question how these network motifs have evolved
                         </aside>
                     </section>
                     
@@ -239,11 +240,11 @@
                     <aside class = "notes"> 
                          1.First of all.. Biochemical networks noisy environment, imperfect components
                         
-                        2. Especially gene regulation networks only allow for small outout tolerances
+                        2. Even though the conditionns might flctuate the tolerance in the output is very low
                         
-                        3. Erros can lead to wrong development and decisions that couls also be fatal
+                        3. Erros can lead to wrong decisions or development &rArr; could be fatal
                         
-                        4. Strong selective pressure against pertubations eg. fluctuations in protein concentration
+                        4. Strong selective pressure against robust networks that work in unstable environment pertubations eg. fluctuations in protein concentration
                         
                         5. Has been shown that the evolved network motif are the most robust networks with the least number of nodes at the same time
                         
@@ -261,7 +262,7 @@
 <!--Mathematical models-->   
                 
 				<section id="biology">
-					<section data-background="img/Laura/dna2.jpg" data-state="img-transparent" >
+					<section data-background="img/Laura/dna.jpg" data-state="img-transparent" >
 						<h2>Mathematical models</h2>
 <!--						<p>Buzzers, Sniffers, Switches, Blinkers</p>-->
 						<aside class="notes">
@@ -511,7 +512,7 @@
 						<h2>Logic operators</h2>
                         <p>There are different ways how X and Y can be integrated to regulate the Z promoter</p>
                         <span class = "fragment" data-fragment-index= "1"><img  width="134.4" height="150" data-src="img/Laura/Pfeil_unten.png" style="background:none; border:none; box-shadow:none;" >
-                        <p>Two common input functions are the <span class = "fragment highlight-blue" data-fragment-index= "2"><strong> AND </strong> </span> gate and <span class = "fragment highlight-green" data-fragment-index= "3"><strong> OR </strong> </span> gate. </p></span>
+                        <p>Two common input functions are the <span class = "fragment highlight-blue" data-fragment-index= "2"><strong> AND </strong> </span> gate and <span class = "fragment highlight-blue" data-fragment-index= "3"><strong> OR </strong> </span> gate. </p></span>
                         
                         <aside class = "notes">
                             two common .. bla bla
@@ -584,10 +585,10 @@
                             <ul>
                              
 
-                                    <li class = "fragment grow" data-fragment-index= "1" style="height:100px"> Create a network with same number of nodes as the real network</li>
-                                    <li class = "fragment grow" data-fragment-index= "2" style="height:100px"> Assign the same number of incoming and outgoing edges to each node <br> as has the corresponding node in the real network</li>
-                                    <li class = "fragment grow" data-fragment-index= "4" style="height:100px"> Scan network for all possible n-node subgraphs and record the number <br> of occurrences of each subgraph </li>
-                                    <li class = "fragment grow" data-fragment-index= "5" style="height:100px">Compare probabilities &rarr; cut-off probability </li>
+                                    <li class = "fragment grow" data-fragment-index= "1"> Create a network with same number of nodes as the real network</li>
+                                    <li class = "fragment grow" data-fragment-index= "2"> Assign the same number of incoming and outgoing edges to each node <br> as has the corresponding node in the real network</li>
+                                    <li class = "fragment grow" data-fragment-index= "4"> Scan network for all possible n-node subgraphs and record the number <br> of occurrences of each subgraph </li>
+                                    <li class = "fragment grow" data-fragment-index= "5">Compare probabilities &rarr; cut-off probability </li>
 
                             </ul>
                         </div>
@@ -613,10 +614,10 @@
                             <div class = "column">
                                 <ul>
 
-                                 <li class = "fragment grow" data-fragment-index= "1" style="height:100px">Measure the transcriptional activity of promoters by means of reporter genes</li>
-                                 <li class = "fragment grow" data-fragment-index= "2" style="height:100px">Widely used: Green Fluorescent Protein (GFP) </li>
-                                <li class = "fragment grow" data-fragment-index= "5" style="height:100px">Promoter activation is detected by increased fluorescent signal</li>
-                                <li class = "fragment grow" data-fragment-index= "6" style="height:100px">Fast-folding GFP variants become fluorescent within minutes after transcription initiation</li>
+                                 <li class = "fragment grow" data-fragment-index= "1" >Measure the transcriptional activity of promoters by means of reporter genes</li>
+                                 <li class = "fragment grow" data-fragment-index= "2">Widely used: Green Fluorescent Protein (GFP) </li>
+                                <li class = "fragment grow" data-fragment-index= "5">Promoter activation is detected by increased fluorescent signal</li>
+                                <li class = "fragment grow" data-fragment-index= "6">Fast-folding GFP variants become fluorescent within minutes after transcription initiation</li>
 
                                 </ul>
                             </div>
@@ -639,6 +640,10 @@
                             3. fast folfing &rArr; high temporal resolution measurements of promoter activity 
                             
                             This is mehtod how flagella system in Ecoli was studied
+                            
+                            
+                            
+                            TESTESTETSTSTS
                         </aside>
                     </section>
                     </section>
