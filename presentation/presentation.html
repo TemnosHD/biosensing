@@ -265,22 +265,23 @@
 						<h2>Mathematical models</h2>
 <!--						<p>Buzzers, Sniffers, Switches, Blinkers</p>-->
 						<aside class="notes">
-							Now we will get to the part, that all non-physicists were anticipating. We will about the mathematical models that describe network motifs quantitatively. But we will also talk about the qualitative aspects of certain network motifs and which functions they bring to a network.
+							Now we will get to the part, that all physicists were probably anticipating. We will talk about the mathematical models that describe network motifs quantitatively. But we will also talk about the qualitative aspects of certain network motifs and which functions they bring to a network.
+							Ultimately our goal is to shed light onto the functioning of network motifs through a mathematical description.
 						</aside>
 					</section>
 					<section>
-						<h2>Preliminary example</h2>
+						<h3>Preliminary example</h3>
 						<iframe data-src="http://localhost:5006/diagram1a", width=1550, height=650px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
 							But first let's talk about a simple example.
-							You see we are given a first order differential equation that describes the wire diagram on the top left.
-							Let's look at that wire diagram first:
+							You see we are given a first order differential equation that describe the wire diagram on the top left.
+							A first look at the wire diagram gives us an overview of what we are talking about:
 							There are two Quantities - a Signal S and a Response R- that are correlated by those "wires" in between.
-							Solid represent either the increase of the quantity they are pointing to or the decrease of the quantity which they are pointing away from.
+							Solid arrows represent either the aggregation of the quantity they are pointing to or the depletion of the quantity which they are pointing away from. Simply speaking they indicate where stuff is going.
 							This would mean in a biological sense that protein R is synthesized through an arrow pointing to it and degraded by an arrow pointing away.
 							Now there is also a second type of arrow, which is dashed. The dashed arrow means that one quantity influences a solid arrow in its magnitude.
 							Again, speaking in a biological sense this means that one protein (the signal) influences the synthetization rate of the response protein.
-							This information is combined in a short differential equation that takes the aggregation into account (blue) and the depletion (red).
+							This information can be combined into a short differential equation that takes the aggregation (blue) and the depletion (red) according to the law of mass action into account.
 							For your understanding: k0 is a base aggregation rate and the depletion always needs some R to be present in order to deplete it.
 
 							Since the DE qualifies as an ODE we can solve it quite easily, which gives us the so called 'steady state' below.
@@ -293,6 +294,8 @@
 							The point in which both the aggregation rate and the depletion rate meet is the steady state since aggregation and depletion are equally large and thus dR/dt is zero. When changing the coefficients of each curve we observe the expected behavior.
 							The steady state moves along both lines as the blue line changes due to the signal.
 
+							An example for this would be S the concentration of mRNA and R being the protein concentration.
+
 							This is the point I want to ask you if there are any questions concerning these principles.
 							It is very important that you understand this very visualization in its entirety in order to be able to understand what is about to come.
 
@@ -303,7 +306,7 @@
 						</aside>
 					</section>
 					<section>
-						<h2>Biological example</h2>
+						<h3>Biological example</h3>
 						<iframe data-src="http://localhost:5006/diagram1b", width=1550, height=650px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
 							Since this seminar also features biologists I want to present you another preliminary example that is actually taken from biology.
@@ -321,63 +324,144 @@
 
 							So, quick question to all biologists in the room, do you use this model for any calculations? Since obviously it is quite simplified.
 							That is why we also have the more accurate model that is governed by Michaelis-Menten kinetics.
-							It simply takes into account that rates can max out for processes no matter how strong the signal.
+							It simply takes into account that rates can max out for processes no matter how strong the signal since [protein] << [ATP].
 						</aside>
 					</section>
 					<section>
-						<h2>Buzzer</h2>
+						<h3>Buzzer</h3>
 						<iframe data-src="http://localhost:5006/diagram1c", width=1550, height=650px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
 							So now we are at the point where we can describe actual processes in biology.
 
-							First of, we see that the differential equation is tweaked by a denominator that consits of the Michaelis factor which is constant and also the same variable as in the numerator.
+							First of, we see that the differential equation is tweaked by a denominator that consists of the Michaelis factor which is constant and also the same variable as in the numerator.
 							This causes the rates to take on a hyperbolic shape.
-							Although this is no longer an ODE we can still solve it... or rather look up the solution on the internet or in a paper and we are given the solution below the equation. The so called 'Goldbeter-Koshland' function.
-							You don't need to remember this equation exactly although we will use is wuite often. But you should remember that is has a sigmoidal shape similar to x/sqrt(1+x^2).
+							We can still solve this quadratic ODE ... or rather look up the solution on the internet or in a paper and we are given the solution below the equation. The so called 'Goldbeter-Koshland' function.
+							You don't need to remember this equation exactly although we will use is quite often. But you should remember that is has a sigmoidal shape similar to x/sqrt(1+x^2).
 							But most important: sigmoidal shape!
 							Again we can play around a bit and see what different coefficients cause on the plot.
 							But let's look further into the shape of our steady state solution.
 							As you may have noticed or already know, the sigmoid function if often used in machine learning for instance, since its shape is quite beneficial.
-							For low signals we have a rather constant low response and for large signals we have a relatively constant large response. In between there is a steep ascent.
+							For low signals we have a rather constant low response and for large signals we have a relatively constant large response. In between there is a steep ascent. 
+							Still this curve is graded and reversible like its predecessors which means that it is monotonous and continuous (graded) and will give always the same value to an S no matter the previous value of S. 
 
 							Because this function is in its properties relatively similar to a button -like on a doorbell- that there is no response when the button is not pressed but a constant response if the button is pressed.
-							Because of this, this network motif is also called a 'Buzzer'.
+							Because of this, this network motif is also called a 'Buzzer'. Another name is also zero-order ultrasensitivity.
+							Its properties can be very important for gene expression or protein synthesis like.....TODO:add an example
 
 						</aside>
 					</section>
 					<section>
-						<h2>Sniffers</h2>
+						<h3>Sniffers</h3>
 						<iframe data-src="http://localhost:5006/diagram1d", width=1550, height=650px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
+							The next motif is called a Sniffer.
+							As the name suggests it is related to the our olfactory sense. Specifically that we are able to smell -be it good or bad- odors and no matter how strong they are at some point we get used to them.
+							Same goes for this motif. Independent of the signal strength the response will always got back to a constant steady state. As you can see the plot clearly features a constant line as steady state, while both the depletion and the aggregation change with the signal they always cancel each other at the same response level.
+							This is achieved by inserting a second quantity into the system - here X.
+							X may be another protein or a ligand that connects to receptors.
+							The signal increases both the aggregation of X and R but X also raises the depletion rate of R thus keeping R on the same level.
+							If we were to look at this differential equation through time the graph would look something like this:
+							For a step like increase of S, X slowly reaches its own steady state, which is in fact dependent on S!!
+							At the same time R increases abruptly due to the increase in S but the slow adaption of X.
+							It then comes back to the steady state as X reaches its final level.
+							Repeating this process has the consequence that the peak in R gets smaller and smaller, since the height of the peak depends on the relation of the old aggregation rate and the new one.
+							This is also called feed-forward control.
+							[draw on blackboard]
+							This motif is also called perfect adaption for which the reasons are obvious I think.
+							This mechanism is not only used in our olfactory sense but also in chemotactic systems which adapt to a constant signaling level.
 						</aside>
 					</section>
 					<section>
-						<h2>Irreversible switch</h2>
+						<h3>Irreversible switch</h3>
 						<iframe data-src="http://localhost:5006/diagram1e", width=1550, height=650px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
+							Now we get to a network motif that is closely connected to this seminars title. Namely the part about "cell fate decisions".
+							They differ to the others that now we introduce feedback, you will see that in a second.
+							This motif is called "irreversible switch" and works through positive feedback.
+							The general thought behind this is that -again- we have a second quantity besides R and S but this time R amplifies the aggregation of EP and EP in return amplifies the aggreagtion of R.
+							This works up to a certain point, where it reaches a critical signal level that causes R and EP to amplify each other stronger than they are depleted ultimately reaching a new steady state that is independent of S.
+							This is important since now the response stays high even though the signal may fall back to zero, the decision is irreversible.
+							The best example for this is apoptosis which can not be stopped once the signal for a cells death is given.
+
+							If we look into the derivative plot we see how this can be achieved:
+							The aggregation consists of the steady state solution for phosphorylation which applies to E and EP and also the amplification through S. For this reason we see a sigmoidal shape that is lifted according to S
+							The depletion on the other side depends only on R and thus is a linear plot.
+							This causes either one or three crossings where the total derivative is 0 and therefore we have a steady state.
+							Now only the outer steady states are so called stable ones as the vector field around them points towards those points. It can also be explained as the aggregation curve cutting the depletion from above meaning that if we were to have a slightly lower R the aggregation would be larger than the depletion thus driving R towards the steady state and vice versa for a slightly too large R. Only if the system were to inhibit the exact state where dR/dt = 0 it would be a steady state but an instable one.
+
 						</aside>
 					</section>
 					<section>
-						<h2>Reversible switch</h2>
+						<h3>Reversible switch</h3>
 						<iframe data-src="http://localhost:5006/diagram1f", width=1550, height=650px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
+							In contrast to that there is a reversible switch or toggle switch that utilizes a negative feedback loop. You can see in the wiring diagram that R amplifies the aggregation of EP which is also depletion of E and E amplifies the depletion of R.
+							So we get quite an interesting picture in the derivative plot in a way that the depletion hat this early peak and then comes back to a linear function but is independent of S.
+							At the same time the aggregation depends solely on S and is rather constant. Hence we get one or three crossing ergo steady states depending on S. For one crossing it is obvious that the response will tend to this single steady state.
+							But if there are multiple crossings the closest steady state to the previous one is taken up until the point where the next stable steady state is the only remaining one and we see a jump in the response. This process is reversible and gives us a switch that has different threshold for activation and deactivation.
+							This results in hysteresis when inspecting the R-S-plot.
+							examples would be:
+							Activation of the M-phase promoting factor in frog egg axtracts. Mitosis is started but can be stopped if necessary.
+							The autocatalytic conversion of normal prion protein to its pathogenic form. (BSE?) unintuitive since prions do not fold back, usually...
+							And the lactose operon in bacteria, which induces lactose metabolism if no glucose is present.
+
 						</aside>
 					</section>
 					<section>
-						<h2>Blinker</h2>
+						<h3>Blinker</h3>
 						<iframe data-src="http://localhost:5006/diagram2a", width=1550, height=650px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
+							There is another "classic" network motif which causes homeostasis meaning that R is more or less static independent of S. But we have to keep track of time.
+
+							Now we get into a more advanced territory were there is no longer only one or two stable steady states but we will observe oscillations.
+							So how is this achieved?
+							First off we link two phosphorylation processes to one another and a quantity X, which brings us to three quantities.
+							Now we assume a constant signal which amplifies aggregation of X. This in return amplifies aggregation of YP with some delay which itself causes amplification of RP aggregation, again with a delay.
+							R then attenuates the aggregation of X which again cascades down to the other two. This happens over and over if S is not too large.
+							Looking at the signal response graph we see that the amplitude of the oscillation first grows with S, then it is shifted upwards until the amplitude shrinks back to an ordinary steady state.
+							You can see that sustained oscillations do in fact depend on the Signal strength and for small or large enough S there is only a single steady state.
+							At critical signal strength we see so called Hopf bifurcations, where the steady state changes into steady oscillations.
+							If we look at this process under the fluorescence microscope we can see that the aggregation an depletion of RP as blinking of its marker.
+							Thus, this is called a Blinker.
+							It plays an important role in the circadian rhythm and again the maturation of cells and mitogen-activated protein kinase.
 						</aside>
 					</section>
 					<section>
-						<h2>Positive Feedback oscillator</h2>
+						<h3>Positive Feedback oscillator</h3>
 						<iframe data-src="http://localhost:5006/diagram2b", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<aside class="notes">
+							The next motif is a different oscillator that again has two additional quantities to S and R but one gives a positive feedback the other a negative.
+							It combines a toggle switch mechanism with homeostasis as a positive and a negative feedback loop a present.
+							Basically the idea is that the homeostatis mechanism drives the system back and forth between the toogle states of the switch.
+							We express this as equations in the usual manner and then look specifically at the X-R-plane not dR/dt!
+							We see that aggregation and depletion only cross at an instable steady state and thus we see a circular motion around this point along the vector field.
+							This causes an oscillation in X and R.
+							As we are only interested in R we see on the right side that for S between its critical values R is oscillating.
+							This is for example used in cyclic AMP production in slime molds. cAMP binds to a receptor that releases more cAMP that again binds to the other receptors. This pushes the receptors into an inactive form which they recover from slowly only after the cAMP is removed.
+						</aside>
+					</section>
+					<section>
+						<h3>Negative Feedback oscillator</h3>
+						<iframe data-src="http://localhost:5006/diagram2c", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<aside class="notes">
+							We can implement this in a different way as well. Here R is synthesized from X and EP gives a positive feedback loop.
+							For large enough S, X becomes large enough that R reaches a critical point where the positive feedback loop kicks in and all of X is synthesized to R, which increases R further to this point.
+							Then R naturally depletes since there is no more X left and this causes EP to deplete as well. Ultimately, only very little X is converted into R and E can aggregate until it causes R to reach the critical value again.
+							Important to this mechanism is the sudden start of oscillations at critical signal strength. This is contrary to the small amplitude oscillations for Hopf bifurcations in the first example.
+							We do distinguish between those different kinds of Hopf bifurcations and call them supercritical in the first case and subcritical in the current case.
+							subcritical systems have the advantage of generating an immediate and robust response at critical signaling strengths.
+
+							
+							This kind of oscillation can be observed in MPF where also the depletion of the substrate causes oscilaltions.
+						</aside>
+					</section>
+					<section>
+						<h2>Large network example</h2>
 						<aside class="notes">
 						</aside>
 					</section>
 					<section>
-						<h2>Negative Feedback oscillator</h2>
-						<iframe data-src="http://localhost:5006/diagram2c", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<h2>Classifying developmental and sensory networks</h2>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -507,12 +591,18 @@
                         <div class = "row">
                             <div class = "column">
                                 <ul>
+<<<<<<< HEAD
                                  <li class = "fragment grow" data-fragment-index= "1">Measure the transcriptional activity of promoters by means of reporter genes</li>
                                  <li class = "fragment grow" data-fragment-index= "2">Widely used: Green Fluorescent Protein (GFP) </li>
                                 <li class = "fragment grow" data-fragment-index= "5">Promoter activation is detected by increased fluorescent signal</li>
                                 <li class = "fragment grow" data-fragment-index= "6">Fast-folding GFP variants become fluorescent within minutes after transcription initiation</li>
+=======
+                                	<li class = "fragment grow" data-fragment-index= "1">Measure the transcriptional activity of promoters by means of reporter genes</li>
+                                 	<li class = "fragment grow" data-fragment-index= "2">Widely used: Green Fluorescent Protein (GFP) </li>
+                                	<li class = "fragment grow" data-fragment-index= "5">Fast-folding GFP variants become fluorescent within minutes after transcription initiation</li>
+                                	<li class = "fragment grow" data-fragment-index= "6">Promoter activation is detected by increased fluorescent signal</li>
+>>>>>>> 92e3a7733bc05c483fa9bdeea93820124c2af595
                                 </ul>
-                            
                             </div>
                             <div class = "column">
                                 
@@ -542,6 +632,7 @@
 				<section id="conclusion">
 					<section data-background="img/Laura/cell.jpg" data-state="img-transparent" >
 						<h2>Conclusion & Outlook</h2>
+<<<<<<< HEAD
                         
 				</section>
                     
@@ -564,6 +655,21 @@
                          
                          </div>
                     </section>
+=======
+					</section>
+					<section>
+						<div>
+                                		<ul>
+                                 			<li class = "fragment grow" data-fragment-index= "1" style="height:100px">network motifs are essential to life itself</li>
+                                 			<li class = "fragment grow" data-fragment-index= "2" style="height:100px">principle of detecting a signal and generating an appropriate response</li>
+                                			<li class = "fragment grow" data-fragment-index= "3" style="height:100px">mathematical representations complement "cartoonish" visualizations</li>
+                                			<li class = "fragment grow" data-fragment-index= "4" style="height:100px">accordance with experimental observations</li>
+                                			<li class = "fragment grow" data-fragment-index= "4" style="height:100px">breaking down complicated systems/networks into smaller understandable motifs</li>
+                                			<li class = "fragment grow" data-fragment-index= "4" style="height:100px">"biological engineering"</li>
+                                		</ul>
+						</div>
+					</section>
+>>>>>>> 92e3a7733bc05c483fa9bdeea93820124c2af595
 				</section>
 
 				<section id="end">
