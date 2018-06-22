@@ -65,12 +65,17 @@
 				<section >
 					<h2>Contents</h2>
                     <p>Introduction</p>
-                    <p>Biology</p>
+                    <p>Mathematical models</p>
                     <p>Large Networks</p>
                     <p>Conclusion & Outlook</p>
                     
 					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						1. Anwer question What are network motifs 
+                        2 Arthur: Mathematically model network motifs and their function
+                        3. Large networks, how to detect network motifs
+                        4. Finish with..
+                        
+                        Lets start off with the question ..
 					</aside>
 				</section>
 
@@ -90,12 +95,23 @@
 							<h2>What are network motifs?</h2>
                             
 								 <ul> 
-                                    <li> <p class="fragment fade-up"> basic interaction patterns that recur throughout biological networks <br> much more often than in random networks </p> </li> 
+                                    <li> <p class="fragment fade-up"> basic interaction patterns that recur throughout biological and non-biological networks much more often than in random networks </p> </li> 
                                  </ul> 
                             
                                 <p class="fragment current-visible"> <img width="715" height="400" data-src="img/Laura/motif2.png" style="background:none; border:none; box-shadow:none;" > </p>
                             
 						</div>
+                        <aside class = "notes">
+                            
+                            1. basic interaction pattern
+                            Picture: one of the most common network motifs - FFL 
+                                    interaction between nodes are illustrated by directed egdes
+                                    1 regulates two where the second one also controls third..
+                            
+                            so this network motif was detected by ..
+                                
+                        
+                        </aside>
 					</section>
                     
                     <!-- Folie 2 continued-->
@@ -106,7 +122,7 @@
                             <div class="column" class = "fragment fade-up" >	 
                                 <h2 > Real network</h2>
                                 <br>
-                                <img width="533" height="527" data-src="img/Laura/random_selfmade.png" alt="Down arrow">
+                                <img width="533" height="527" data-src="img/Laura/real_selfmade.png" alt="Down arrow">
                                 
                                 <img class = "fragment" width="200" height="184" data-src="img/Laura/Pfeil.png" style="background:none; border:none; box-shadow:none; position: absolute; left:860px; top:350px" data-fragment-index= "2">
                             </div>
@@ -114,11 +130,16 @@
                             <div class="column" class = "fragment" data-fragment-index= "1">	 
                                 <h2> Random network</h2>
                                 <br>
-                                <img width="533" height="527" data-src="img/Laura/real_selfmade.png" alt="Down arrow">      
+                                <img width="533" height="527" data-src="img/Laura/random_selfmade.png" alt="Down arrow">      
                             </div>
                             
                             
 						</div>
+                        
+                        <aside class = "notes">
+                            1. Compare the two networks
+                            in general a network does not consist of only three nodes...
+                        </aside>
 					</section>
                     
                     <!-- Folie 3 -->
@@ -139,6 +160,12 @@
                        
                             
                         </div> 
+                        
+                        <aside class = "notes">
+                            network motifs form... &rArr; defined function
+                            
+                            Interestingly there is only a small set of recurring network motifs serve as building blocks 
+                        </aside>
                             
 					</section>
                     
@@ -149,6 +176,22 @@
                             <img class = "fragment shrink" data-fragment-index = "1" width="885" height="500" data-src="img/Laura/neurons.png" style="background:none; border:none; box-shadow:none;" >
                             <img class = "fragment shrink" data-fragment-index = "1" width="885" height="500" data-src="img/Laura/www.png" style="background:none; border:none; box-shadow:none; " >
                         </div>
+                        
+                        <aside class = "notes">
+                        
+                                a few examples: 
+                            
+                            1. Transcription regulation networks &rArr; biochemical networks responsible
+                                for regulating the expression of genes in cells
+                            2. Nodes represent neurons (or neuronclasses), and edges represent synaptic connections
+                                between the neurons.
+                            (  This similarity in motifs &rArr;similarity in the design constraints of the two types of network )
+                            
+                            3. a network of directed hyperlinks between World Wide Web pages within a single domain The World Wide Web motifs may reflect a design aimed at short paths between related pages.
+                            
+                            As the network motifs in transcripton networks are the most studied so far &rArr; Refresh your memory of how they work
+                            
+                        </aside>
                     </section>
 
                     
@@ -159,7 +202,11 @@
 							<h2>Transcription networks</h2> 
                             <img width="952" height="750" data-src="img/Laura/trans_trans.png" style="background:none; border:none; box-shadow:none;" >
 
-						
+						<aside class = "notes">
+                            In the production of proteins there are two important stages: blabla
+                            
+                            this process can either be accelrated or inhibited by transcription factor proteins
+                        </aside>
 					</section>
                     
                     <section>
@@ -167,7 +214,15 @@
                         <h2>Activators and repressors</h2>
                         <div style = "position: absolute; left: 450px; bottom:auto"><img class = "fragment current-visible" data-fragment-index = "0" width="996" height="525" data-src="img/Laura/activator.png" style="background:none; border:none; box-shadow:none;" ></div>
                         <div style = "position: absolute; left: 180px;"><img class = "fragment" data-fragment-index = "1" width="1572" height="400" data-src="img/Laura/repressor.png" style="background:none; border:none; box-shadow:none;" ></div>
-                    
+                        
+                        
+                        <aside class = "notes">
+                            blabla
+                            as the transcripion proteins themselve arise from a transcription -translation process it can form interesting dynamics in the form of a transription regulation network. 
+                            They can mathematically described by setting up differential equation with the reaction rates k as Arthur..
+                            
+                            We have seen that in biologcical networks (Trans and neurons) the same network motifs have evolved, which gives rise to the question....
+                        </aside>
                     </section>
                     
                    
@@ -181,9 +236,23 @@
                             <div class = "inner_2"><img class = "fragment"  width="1810" height="980" data-src="img/Laura/Evolution_3.png" style="background:none; border:none; box-shadow:none;" ></div>
                             <div class = "inner_2"><img class = "fragment"  width="1810" height="980" data-src="img/Laura/Evolution_4.png" style="background:none; border:none; box-shadow:none;" ></div>
                             <div class = "inner_2"><img class = "fragment"  width="1810" height="980" data-src="img/Laura/Evolution.png" style="background:none; border:none; box-shadow:none;" ></div>
+                    <aside class = "notes"> 
+                         1.First of all.. Biochemical networks noisy environment, imperfect components
+                        
+                        2. Especially gene regulation networks only allow for small outout tolerances
+                        
+                        3. Erros can lead to wrong development and decisions that couls also be fatal
+                        
+                        4. Strong selective pressure against pertubations eg. fluctuations in protein concentration
+                        
+                        5. Has been shown that the evolved network motif are the most robust networks with the least number of nodes at the same time
+                        
+                        
+                    </aside>
                     
 
                     </section>
+                    
                     
                     
 
@@ -322,6 +391,13 @@
                     
 					<section data-background="img/Laura/flagella.jpg" data-state="img-transparent">
 						<h2>Large Networks</h2>
+                        
+                        <aside class = "notes"> As i said befor e network motifs are building blocks of bigger networks
+                            
+                        But not only the network motif itself has a defined function, but the behaviour can also alter by differetn inout functions the so called logic operators: 
+                        
+                        
+                        </aside>
 					</section>
                     
                     <!-- Folie 2 -->
@@ -331,6 +407,12 @@
                         <p>There are different ways how X and Y can be integrated to regulate the Z promoter</p>
                         <span class = "fragment" data-fragment-index= "1"><img  width="134.4" height="150" data-src="img/Laura/Pfeil_unten.png" style="background:none; border:none; box-shadow:none;" >
                         <p>Two common input functions are the <span class = "fragment highlight-blue" data-fragment-index= "2"><strong> AND </strong> </span> gate and <span class = "fragment highlight-green" data-fragment-index= "3"><strong> OR </strong> </span> gate. </p></span>
+                        
+                        <aside class = "notes">
+                            two common .. bla bla
+                            
+                            were biding of both regulators is necessary .. 
+                        </aside>
 					</section>
                     
                     <!-- Folie 3 -->
@@ -350,6 +432,24 @@
                         <h3>OR Gate</h3>
                         <img width="284" height="569" data-src="img/Laura/or_gate.png" alt="Down arrow"> 
                         <img width="1380" height="569" data-src="img/Laura/or_function.png" alt="Down arrow"> 
+                        
+                        <aside class = "notes">
+                          Flaggela system of E.Coli 
+                            when conditions are unfavourable glucose starvation, osmotic stress etc. E coli produces flagella and swims away 
+                            
+                            
+                            has a FFl with or logic. 
+                            
+                            The reason becomes clear when looking at the graph &rArr; Sx are factors that are controlled by factors that respond to environmental signals 
+                            
+                            delay even though signal isn't there
+                            
+                            ecoli only stops when conditions have been good for a longer time
+                            
+                            
+                            
+                        
+                        </aside>
                         
                     </section>
 
@@ -379,7 +479,7 @@
                             <ol>
                              
 
-                                    <li class = "fragment grow" data-fragment-index= "1"> Create a network with same number of nodes as has the real network</li>
+                                    <li class = "fragment grow" data-fragment-index= "1"> Create a network with same number of nodes as the real network</li>
                                     <li class = "fragment grow" data-fragment-index= "2"> Assign the same number of incoming and outgoing edges to each node <br> as has the corresponding node in the real network</li>
                                     <li class = "fragment grow" data-fragment-index= "4"> Scan network for all possible n-node subgraphs and record the number <br> of occurrences of each subgraph </li>
                                     <li class = "fragment grow" data-fragment-index= "5">Compare probabilities &rarr; cut-off probability </li>
@@ -409,8 +509,8 @@
                                 <ul>
                                  <li class = "fragment grow" data-fragment-index= "1">Measure the transcriptional activity of promoters by means of reporter genes</li>
                                  <li class = "fragment grow" data-fragment-index= "2">Widely used: Green Fluorescent Protein (GFP) </li>
-                                <li class = "fragment grow" data-fragment-index= "5">Fast-folding GFP variants become fluorescent within minutes after transcription initiation</li>
-                                <li class = "fragment grow" data-fragment-index= "6">Promoter activation is detected by increased fluorescent signal</li>
+                                <li class = "fragment grow" data-fragment-index= "5">Promoter activation is detected by increased fluorescent signal</li>
+                                <li class = "fragment grow" data-fragment-index= "6">Fast-folding GFP variants become fluorescent within minutes after transcription initiation</li>
                                 </ul>
                             
                             </div>
@@ -424,6 +524,16 @@
                             </div>
                             
                         </div>
+                        
+                        <aside class = "notes">
+                            
+                            1.Green flourescent protein: firtly discovered in a type of jellyfish. 
+                            gene is inserted after the promoter of the gene of interest.
+                            2.fusion protein indicates active promoter 
+                            3. fast folfing &rArr; high temporal resolution measurements of promoter activity 
+                            
+                            This is mehtod how flagella system in Ecoli was studied
+                        </aside>
                     </section>
                     </section>
             
@@ -432,7 +542,28 @@
 				<section id="conclusion">
 					<section data-background="img/Laura/cell.jpg" data-state="img-transparent" >
 						<h2>Conclusion & Outlook</h2>
-					</section>
+                        
+				</section>
+                    
+                    
+                    
+                    
+                    <section>
+                        
+                     <div class = "row" style = "position: relative; margin: 200px;">
+                         <h2>Conclusion & Outlook </h2>
+                      <ul>
+                          <li class = "fragment grow">Current findings suggest that complex biological networks contain a limited set of network motifs</li>
+                        <li class = "fragment grow">Experiments in living cells and mathematical modelling have helped to define  functions of network motifs</li>
+                          
+                          <li class = "fragment grow">Certain network motifs have been selected again and again in evolution</li>
+                          <li class = "fragment grow">How do network motifs work in large networks?</li>
+                          <li class = "fragment grow">Further research on signalling networks and
+                              neuronal networks </li>
+                        </ul>
+                         
+                         </div>
+                    </section>
 				</section>
 
 				<section id="end">
