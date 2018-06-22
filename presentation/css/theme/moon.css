@@ -297,6 +297,12 @@ html.img-transparent div.slide-background.present {
     float: left;
     width: 50%;
 }
+.column2 {
+    position:relative;
+    width: 50%;
+    left: 80px;
+    
+}
 
 /* Clear floats after the columns */
 .row:after {
