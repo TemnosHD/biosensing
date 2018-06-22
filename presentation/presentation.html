@@ -91,19 +91,26 @@
                     
                     <!-- Folie 2 -->
 					<section data-transition="slide">
-						<div class="row">
+						
 							<h2>What are network motifs?</h2>
                             
-								 <ul> 
-                                    <li> <p class="fragment fade-up"> basic interaction patterns that recur throughout biological and non-biological networks much more often than in random networks </p> </li> 
+								 <ul style = "position:relative; margin-left: 100px; margin-right: 100px;"> 
+                                    <li> <p class="fragment"> basic interaction patterns that recur throughout biological and non-biological networks much more often than in random networks </p> </li> 
+                                    <li class = "fragment"> <p>Small set of network motifs serve as bulding blocks of large networks</p> </li>
+                                    <li class = "fragment"> <p> Each network has a defined function: e.g. filters, pulse generators </p>  </li> 
+                                    
                                  </ul> 
                             
                                 <p class="fragment"> <img width="715" height="400" data-src="img/Laura/motif2.png" style="background:none; border:none; box-shadow:none;" > </p>
                             
-						</div>
+						
                         <aside class = "notes">
                             
                             1. basic interaction pattern
+                            network motifs form... &rArr; defined function
+                            
+                            Interestingly there is only a small set of recurring network motifs serve as building blocks 
+                            
                             Picture: one of the most common network motifs - FFL 
                                     interaction between nodes are illustrated by directed egdes
                                     1 regulates two where the second one also controls third..
@@ -144,6 +151,7 @@
 					</section>
                     
                     <!-- Folie 3 -->
+<!--
 					<section>
                        
 						<div >
@@ -169,6 +177,7 @@
                         </aside>
                             
 					</section>
+-->
                     
                     <section>
                     
@@ -536,6 +545,8 @@
                     <section>
                         
                         <h3>OR Gate</h3>
+                        <img width="266" height="569" data-src="img/Laura/and_gate.png" alt="Down arrow"> 
+                        <img width="1129" height="569" data-src="img/Laura/and_function.png" alt="Down arrow"> 
                         <img width="284" height="569" data-src="img/Laura/or_gate.png" alt="Down arrow"> 
                         <img width="1380" height="569" data-src="img/Laura/or_function.png" alt="Down arrow"> 
                         
@@ -580,7 +591,7 @@
                     <section>
                     <div class = "row">
                         <h2>Finding network motifs theoretically</h2>
-                        <div class = "column">
+                        <div class = "column2">
                              <p>Algorithm to detect network motifs:</p>
                             <ul>
                              
@@ -611,7 +622,7 @@
                     <section>
                         <h2>Study network motifs experimentally</h2>
                         <div class = "row">
-                            <div class = "column">
+                            <div class = "column2">
                                 <ul>
 
                                  <li class = "fragment grow" data-fragment-index= "1" >Measure the transcriptional activity of promoters by means of reporter genes</li>
@@ -623,10 +634,10 @@
                             </div>
                             <div class = "column">
                                 
-                                <div style = "position: absolute; top:auto; left: 1100px;" ><img class = "fragment current-visible" data-fragment-index= "2" width="803" height="450" data-src="img/Laura/jellyfish.jpeg" style="background:none; border:none; box-shadow:none;" ></div>
-                                <div style = "position: absolute; top:auto; left: 1200px;" ><img class = "fragment" data-fragment-index= "3" width="466" height="450" data-src="img/Laura/gene_reporter.png" style="background:none; border:none; box-shadow:none;" ></div>
+                                <div class = "inner" ><img class = "fragment current-visible" data-fragment-index= "2" width="625" height="350" data-src="img/Laura/jellyfish.jpeg" style="background:none; border:none; box-shadow:none;" ></div>
+                                <div class = "inner" ><img class = "fragment" data-fragment-index= "3" width="362" height="350" data-src="img/Laura/gene_reporter.png" style="background:none; border:none; box-shadow:none;" ></div>
                                 
-                                <div style = "position: absolute; top:auto; left: 1100px;" ><img class = "fragment" data-fragment-index= "4" width="754" height="450" data-src="img/Laura/gene_reporter_mRna.png" alt="Down arrow" style="background:none; border:none; box-shadow:none;"></div>
+                                <div class = "inner"><img class = "fragment" data-fragment-index= "4" width="586" height="350" data-src="img/Laura/gene_reporter_mRna.png" alt="Down arrow" style="background:none; border:none; box-shadow:none;"></div>
                                 
                             </div>
                             
@@ -674,7 +685,7 @@
                           
                           <li class = "fragment grow" style="height:100px">How do network motifs work in large networks?</li>
                           <li class = "fragment grow" style="height:100px">Further research on other networks</li>
-                          <li class = "fragment grow" style="height:100px">"biological engineering"</li>
+                          
                         </ul>
                          
                          </div>
@@ -736,26 +747,79 @@
                         
                         </div>
                         <div style = "position:absolute; left:1000px; top:350px" >
-                            <p>Phillips, Rob. "Napoleon is in equilibrium." <em>Annu. Rev. Condens. Matter Phys.</em> 6.1 (2015): 85-111.</p>
+                            Phillips, Rob. "Napoleon is in equilibrium." <em>Annu. Rev. Condens. Matter Phys.</em> 6.1 (2015): 85-111.
                         </div>
                     
                     
                     </div>
                 
                 </section>
+                    
+    
                 <section>
                     <div class = "row">
                         <div class = "column">
-                            
+                        <img  height="285" data-src="img/Laura/and_gate.png" alt="Down arrow"> 
+                        <img  height="285" data-src="img/Laura/and_function.png" alt="Down arrow"><br> 
+                        <img  height="285" data-src="img/Laura/or_gate.png" alt="Down arrow"> 
+                        <img height="285" data-src="img/Laura/or_function.png" alt="Down arrow"> 
+                        </div>
+                        
+                        <div style = "position:absolute; left:1000px; top:350px">
+                         Alon, Uri. "Network motifs: theory and experimental approaches." <em>Nature Reviews Genetics</em> 8.6 (2007): 450
                         </div>
                     </div>
+                    
+                </section>
+                <section>
+                  <div class = "row">
+                    <div class= "column">
+                        <img height = "200" data-src = "img/Laura/jellyfish.jpeg"><br>
+                        <img height = "200" data-src = "img/Laura/gene_reporter.png"><br>
+                        <img height = "200" data-src = "img/Laura/gene_reporter_mRNA.png">
+                        
+                        
+                        
+                      </div>
+                      <div class = "column">
+                        <li style="margin-top:50px; margin-bottom: 50px;">https://www.gettyimages.de/-video/green-jellyfish?sort=most-popular&offlinecontent=include&phrase=green-%20jellyfish </li> 
+                        <li style="margin-top:200px; margin-bottom: 200px;">http://www.dnaftb.org/34/problem.html</li> 
+                        
+                        
+                      </div>
+                    
+                    </div>    
+                </section>
+                    
+                <section>
+                  <div class = "row">
+                    <div class= "column">
+                        <img height = "200" data-src = "img/network3.png"><br>
+                        <img height = "200" data-src = "img/Laura/cell.jpg"><br>
+                        <img height = "200" data-src = "img/Laura/dna.jpg"><br>
+                        <img height = "200" data-src = "img/Laura/flagella.jpg">
+                        
+                        
+                      </div>
+                      <div class = "column">
+                        <li style="margin-top:100px; margin-bottom: 150px;">http://tracks.arte.tv/fr/surveillance-deni-de-facies</li> 
+                        <li style="margin-top:100px; margin-bottom: 150px;">https://www.utahpeoples-post.com/2016/10/human-cell-atlas/</li> 
+                        <li style="margin-top:100px; margin-bottom: 150px;">http://tracks.arte.tv/fr/surveillance-deni-de-facies </li>
+                        <li style="margin-top:100px; ">https://www.sciencenewsfor-students.org/article/bacteria-help-water-effortlessly-go-flow</li>
+                      </div>
+                    
+                    </div>    
                 </section>
                 
                 </section>
+<!-- BackUP -->
+            <section>
+               <p > <img height="700"  data-src="img/Laura/Numbers.png" style="background:none; border:none; box-shadow:none;" > </p>
+            </section>
+            <section>
+                <p > <img width="1000"  data-src="img/Laura/Flagella_system.png" style="background:none; border:none; box-shadow:none;" > </p>
+            </section>
 
-			</div>
-
-		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
