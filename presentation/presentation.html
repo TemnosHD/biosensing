@@ -95,9 +95,9 @@
 							<h2>What are network motifs?</h2>
                             
 								 <ul style = "position:relative; margin-left: 100px; margin-right: 100px;"> 
-                                    <li> <p class="fragment"> basic interaction patterns that recur throughout biological and non-biological networks much more often than in random networks </p> </li> 
+                                    <li> <p class="fragment">Basic interaction patterns that recur throughout biological and non-biological networks much more often than in random networks</p></li> 
                                     <li class = "fragment"> <p>Small set of network motifs serve as bulding blocks of large networks</p> </li>
-                                    <li class = "fragment"> <p> Each network has a defined function: e.g. filters, pulse generators </p>  </li> 
+                                    <li class = "fragment"> <p> Each network has a defined function: e.g. filters, pulse generators</p>  </li> 
                                     
                                  </ul> 
                             
@@ -280,6 +280,43 @@
 						</aside>
 					</section>
 					<section>
+						<h2>Classifying developmental and sensory networks</h2>
+                                		<ul>
+							<li class = "fragment" data-fragment-index= "1" style="height:100px"><b>Sensory networks</b></li>
+                                			<ul>
+                                 				<li class = "fragment" data-fragment-index= "2" style="height:100px">Cell "senses" its surroundings/its own state</li>
+                                				<li class = "fragment" data-fragment-index= "3" style="height:100px">Response is a function of the signal</li>
+                                			</ul>
+							<li class = "fragment" data-fragment-index= "4" style="height:100px"><b>Developmental networks</b></li>
+                                			<ul>
+                                				<li class = "fragment" data-fragment-index= "5" style="height:100px">Response does not depend on the signal if threshold is reached</li>
+                                 				<li class = "fragment" data-fragment-index= "6" style="height:100px">Cell fate decisions are final</li>
+                                			</ul>
+                                		</ul>
+						<aside class="notes">
+							Now, since we have started showing quite a few network motifs, we should also classify them  ... sort of.
+							We have already described networks through properties such as graded and reversible, talked about feed-forward and feed-back and gave names such as Blinkers Buzzers etc.
+							Now we have to distinguish these motifs in two major groups which fits our seminars title.
+							It is the motif's application in a cell that makes it either part of a sensory network or a developmental network.
+							Sensory network examples are phosphylation, the Buzzer or the Blinker, where the response depends on the signal.
+							Thus, we can say the cell senses its surroundings or its own state and reacts to this with a response. If the signal stops the cell also stops its response. An example for this would be chemotaxis of e.coli.
+							On the other side developmental networks make cell fate decisions which no longer depend on the signal once they have been made.
+							We have shown you the irreversible switch earlier. This is a perfect example for a developmental network.
+							In biology the most obvious example -again- is apoptosis. Once the decision is made, the cell is doomed no matter what.
+						</aside>
+					</section>
+					<section>
+						<h3>Preliminary example</h3>
+							<div class="row" style="background-color:#FFF;">
+								<div class="column">
+									<img  width="800" data-src="img/wire1a.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+								<div class="column">
+									<img  width="800" data-src="img/diff1a.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+							</div>
+					</section>
+					<section>
 						<h3>Preliminary example</h3>
 						<iframe data-src="http://localhost:5006/diagram1a", width=1550, height=850px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
@@ -317,6 +354,17 @@
 					</section>
 					<section>
 						<h3>Biological example</h3>
+							<div class="row" style="background-color:#FFF;">
+								<div class="column">
+									<img  width="800" data-src="img/wire1b.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+								<div class="column">
+									<img  width="800" data-src="img/diff1b.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+							</div>
+					</section>
+					<section>
+						<h3>Biological example</h3>
 						<iframe data-src="http://localhost:5006/diagram1b", width=1550, height=850px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
 							Since this seminar also features biologists I want to present you another preliminary example that is actually taken from biology.
@@ -339,7 +387,18 @@
 					</section>
 					<section>
 						<h3>Buzzer</h3>
-						<iframe data-src="http://localhost:5006/diagram1c", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+							<div class="row" style="background-color:#FFF;">
+								<div class="column">
+									<img  width="600" data-src="img/wire1c.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+								<div class="column">
+									<img  width="1200" data-src="img/diff1c.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+							</div>
+					</section>
+					<section>
+						<h3>Buzzer</h3>
+						<iframe data-src="http://localhost:5006/diagram1c", width=1550, height=850px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
 							So now we are at the point where we can describe actual processes in biology.
 
@@ -361,8 +420,19 @@
 						</aside>
 					</section>
 					<section>
-						<h3>Sniffers</h3>
-						<iframe data-src="http://localhost:5006/diagram1d", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<h3>Sniffer</h3>
+							<div class="row" style="background-color:#FFF;">
+								<div class="column">
+									<img  width="800" data-src="img/wire1d.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+								<div class="column">
+									<img  width="800" data-src="img/diff1d.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+							</div>
+					</section>
+					<section>
+						<h3>Sniffer</h3>
+						<iframe data-src="http://localhost:5006/diagram1d", width=1550, height=850px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
 							The next motif is called a Sniffer.
 							As the name suggests it is related to the our olfactory sense. Specifically that we are able to smell -be it good or bad- odors and no matter how strong they are at some point we get used to them.
@@ -382,8 +452,30 @@
 						</aside>
 					</section>
 					<section>
+						<h3>Sniffer</h3>
+							<div class="row" style="background-color:#FFF;">
+								<div class="column">
+									<img  width="800" data-src="img/adaption.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+								<div class="column">
+									<img  width="800" data-src="img/diff1d.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+							</div>
+					</section>
+					<section>
 						<h3>Irreversible switch</h3>
-						<iframe data-src="http://localhost:5006/diagram1e", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+							<div class="row" style="background-color:#FFF;">
+								<div class="column">
+									<img  width="800" data-src="img/wire1e.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+								<div class="column">
+									<img  width="800" data-src="img/diff1e.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+							</div>
+					</section>
+					<section>
+						<h3>Irreversible switch</h3>
+						<iframe data-src="http://localhost:5006/diagram1e", width=1550, height=850px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
 							Now we get to a network motif that is closely connected to this seminars title. Namely the part about "cell fate decisions".
 							They differ to the others that now we introduce feedback, you will see that in a second.
@@ -403,7 +495,18 @@
 					</section>
 					<section>
 						<h3>Reversible switch</h3>
-						<iframe data-src="http://localhost:5006/diagram1f", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+							<div class="row" style="background-color:#FFF;">
+								<div class="column">
+									<img  width="800" data-src="img/wire1f.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+								<div class="column">
+									<img  width="800" data-src="img/diff1f.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+							</div>
+					</section>
+					<section>
+						<h3>Reversible switch</h3>
+						<iframe data-src="http://localhost:5006/diagram1f", width=1550, height=850px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
 							In contrast to that there is a reversible switch or toggle switch that utilizes a negative feedback loop. You can see in the wiring diagram that R amplifies the aggregation of EP which is also depletion of E and E amplifies the depletion of R.
 							So we get quite an interesting picture in the derivative plot in a way that the depletion hat this early peak and then comes back to a linear function but is independent of S.
@@ -418,27 +521,19 @@
 						</aside>
 					</section>
 					<section>
-						<h3>Blinker</h3>
-						<iframe data-src="http://localhost:5006/diagram2a", width=1550, height=650px style="background: #FFFFFF;"></iframe>
-						<aside class="notes">
-							There is another "classic" network motif which causes homeostasis meaning that R is more or less static independent of S. But we have to keep track of time.
-
-							Now we get into a more advanced territory were there is no longer only one or two stable steady states but we will observe oscillations.
-							So how is this achieved?
-							First off we link two phosphorylation processes to one another and a quantity X, which brings us to three quantities.
-							Now we assume a constant signal which amplifies aggregation of X. This in return amplifies aggregation of YP with some delay which itself causes amplification of RP aggregation, again with a delay.
-							R then attenuates the aggregation of X which again cascades down to the other two. This happens over and over if S is not too large.
-							Looking at the signal response graph we see that the amplitude of the oscillation first grows with S, then it is shifted upwards until the amplitude shrinks back to an ordinary steady state.
-							You can see that sustained oscillations do in fact depend on the Signal strength and for small or large enough S there is only a single steady state.
-							At critical signal strength we see so called Hopf bifurcations, where the steady state changes into steady oscillations.
-							If we look at this process under the fluorescence microscope we can see that the aggregation an depletion of RP as blinking of its marker.
-							Thus, this is called a Blinker.
-							It plays an important role in the circadian rhythm and again the maturation of cells and mitogen-activated protein kinase.
-						</aside>
+						<h3>Positive feedback oscillator</h3>
+							<div class="row" style="background-color:#FFF;">
+								<div class="column">
+									<img  width="800" data-src="img/wire2b.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+								<div class="column">
+									<img  width="800" data-src="img/diff2b.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+							</div>
 					</section>
 					<section>
-						<h3>Positive Feedback oscillator</h3>
-						<iframe data-src="http://localhost:5006/diagram2b", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<h3>Positive feedback oscillator</h3>
+						<iframe data-src="http://localhost:5006/diagram2b", width=1550, height=850px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
 							The next motif is a different oscillator that again has two additional quantities to S and R but one gives a positive feedback the other a negative.
 							It combines a toggle switch mechanism with homeostasis as a positive and a negative feedback loop a present.
@@ -451,8 +546,19 @@
 						</aside>
 					</section>
 					<section>
-						<h3>Negative Feedback oscillator</h3>
-						<iframe data-src="http://localhost:5006/diagram2c", width=1550, height=650px style="background: #FFFFFF;"></iframe>
+						<h3>Negative feedback oscillator</h3>
+							<div class="row" style="background-color:#FFF;">
+								<div class="column">
+									<img  width="800" data-src="img/wire2c.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+								<div class="column">
+									<img  width="800" data-src="img/diff2c.png" style="background:none; border:none; box-shadow:none;" >
+								</div>
+							</div>
+					</section>
+					<section>
+						<h3>Negative feedback oscillator</h3>
+						<iframe data-src="http://localhost:5006/diagram2c", width=1550, height=850px style="background: #FFFFFF;"></iframe>
 						<aside class="notes">
 							We can implement this in a different way as well. Here R is synthesized from X and EP gives a positive feedback loop.
 							For large enough S, X becomes large enough that R reaches a critical point where the positive feedback loop kicks in and all of X is synthesized to R, which increases R further to this point.
@@ -467,34 +573,11 @@
 					</section>
 					<section>
 						<h2>Large network example</h2>
-						<aside class="notes">
-						</aside>
+						<img  height="800" data-src="img/graph.png" style="background:none; border:none; box-shadow:none;" >
 					</section>
 					<section>
-						<h2>Classifying developmental and sensory networks</h2>
-                                		<ul>
-                                 			<li class = "fragment grow" data-fragment-index= "1" style="height:100px">sensory networks</li>
-                                			<ul>
-                                 				<li class = "fragment grow" data-fragment-index= "2" style="height:100px">cell "senses" its surroundings/its state</li>
-                                				<li class = "fragment grow" data-fragment-index= "3" style="height:100px">response is a function of the signal</li>
-                                			</ul>
-                                			<li class = "fragment grow" data-fragment-index= "4" style="height:100px">developmental networks</li>
-                                			<ul>
-                                				<li class = "fragment grow" data-fragment-index= "5" style="height:100px">response does not depend on the signal if threshold is reached</li>
-                                 				<li class = "fragment grow" data-fragment-index= "6" style="height:100px">cell fate decision are final</li>
-                                			</ul>
-                                		</ul>
-						<aside class="notes">
-							Now, since we have started showing quite a few network motifs, we should also classify them  ... sort of.
-							We have already described networks through properties such as graded and reversible, talked about feed-forward and feed-back and gave names such as Blinkers Buzzers etc.
-							Now we have to distinguish these motifs in two major groups which fits our seminars title.
-							It is the motif's application in a cell that makes it either part of a sensory network or a developmental network.
-							Sensory network examples are phosphylation, the Buzzer or the Blinker, where the response depends on the signal.
-							Thus, we can say the cell senses its surroundings or its own state and reacts to this with a response. If the signal stops the cell also stops its response. An example for this would be chemotaxis of e.coli.
-							On the other side developmental networks make cell fate decisions which no longer depend on the signal once they have been made.
-							We have shown you the irreversible switch earlier. This is a perfect example for a developmental network.
-							In biology the most obvious example -again- is apoptosis. Once the decision is made, the cell is doomed no matter what.
-						</aside>
+						<h2>Large network example</h2>
+						<img  height="800" data-src="img/response.png" style="background:none; border:none; box-shadow:none;" >
 					</section>
 				</section>
                 
@@ -661,7 +744,7 @@
 
 				<section id="conclusion">
 					<section data-background="img/Laura/cell.jpg" data-state="img-transparent" >
-						<h2>Conclusion & Outlook</h2>
+						<h2>Conclusion</h2>
 
                         
 				</section>
@@ -699,7 +782,6 @@
                                 			<li class = "fragment grow" data-fragment-index= "3" style="height:100px">mathematical representations complement "cartoonish" visualizations</li>
                                 			<li class = "fragment grow" data-fragment-index= "4" style="height:100px">accordance with experimental observations</li>
                                 			<li class = "fragment grow" data-fragment-index= "4" style="height:100px">breaking down complicated systems/networks into smaller understandable motifs</li>
-                                			<li class = "fragment grow" data-fragment-index= "4" style="height:100px">"biological engineering"</li>
                                 		</ul>
 						</div>
 					</section>
