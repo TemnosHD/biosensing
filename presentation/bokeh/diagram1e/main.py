@@ -31,6 +31,6 @@ k = np.array([('k0', 0.5), ('k1', 0.01), ('k2', 1.0), ('k3', 1.00), ('k4', 0.2),
 
 e1 = plotter_bif(aggregation, depletion, dRdt, _S_0=1,
                  _kvalues=k, _wire_url='diagram1e/static/wire1e.png', _formula_url='diagram1e/static/diff1e.png',
-                _N=600, _Rmax=1, _Rmin=0, _Smax=15, _Smin=0, _title='Figure 1e')
+                _N=600, _Rmax=1, _Rmin=0, _Smax=15, _Smin=0, _title='Figure 1e', _imgheight=120)
 
 e1.show_server()

@@ -15,8 +15,8 @@ output_notebook()
 #implement class plotter that plots everything that is necessary
 class plotter_bif:
     def __init__(self, _aggr, _depl, _dRdt, _S_0,
-                 _kvalues=np.ones(7), _wire_url=0, _formula_url=0,
-                _N=200, _Rmax=2, _Rmin=0, _Smax=3, _Smin=0, _title='test', _R0=0):
+                 _kvalues=np.ones(7), _kmax=0, _wire_url=0, _formula_url=0,
+                _N=200, _Rmax=2, _Rmin=0, _Smax=3, _Smin=0, _title='test', _R0=0, _imgheight=150):
         self.aggregation = _aggr
         self.depletion = _depl
         self.dRdt = _dRdt
@@ -32,6 +32,15 @@ class plotter_bif:
         self.formula_url = _formula_url
         self.title = _title
         self.R = _R0
+        self.imgheight=_imgheight
+        
+        if (np.size(_kmax)==1):
+            self.kmax=np.array(_kvalues)
+            self.kmax[:]['value'] = self.kmax[:]['value']*2
+        else:
+            self.kmax=_kmax
+            
+        
         
         # Set up data
         R_x = np.linspace(self.Rmin, self.Rmax, self.N)
@@ -60,31 +69,38 @@ class plotter_bif:
         #self.data_S_R = ColumnDataSource(data=dict(R_split=R_split, S_split=S_split))
         
         #implement a list of columnnames and use that list with add to append datasource
-        self.data_R_S = []
-        self.tags_R_S = []
-        for i, r in enumerate(R_split):
-            data_ = ColumnDataSource()
-            s = S_split[i]
-            tag = 's%i' % i
-            data_.add(s, tag)
-            self.tags_R_S.append([tag])
-            for j, _r in  enumerate(r):
-                #print(r, _r)
-                tag = 'r%i' % j
-                data_.add(_r, tag)
-                self.tags_R_S[i].append(tag)
-            self.data_R_S.append(data_)
+        R = np.array([])
+        R_dotted = np.array([])
+        S = np.array([])
+        S_dotted = np.array([])
+        self.data_R_S2 = ColumnDataSource()
+        self.data_R_S2_dotted = ColumnDataSource()
+        
+        for i, r_ in enumerate(R_split):
+            for j, r in enumerate(r_):
+                s = S_split[i]
+                _r = r
+                _s = s
+                if j%2 == 1:
+                    _r = np.flip(r, 0)
+                    _s = np.flip(s, 0)
+                    R_dotted = np.append(R_dotted, _r)
+                    S_dotted = np.append(S_dotted, _s)
+                R = np.append(R, _r)
+                S = np.append(S, _s)
+        self.data_R_S2.add(R, "R")
+        self.data_R_S2.add(S, "S")
+        self.data_R_S2_dotted.add(R_dotted, "R")
+        self.data_R_S2_dotted.add(S_dotted, "S")
         
         
         # Set up widgets
         self.S_var = Slider(title="S", value=self.S, start=self.Smin, end=self.Smax, step=(self.Smax - self.Smin)/100)
         self.k_var = list(np.empty(np.size(self.kvalues)))
         for i, k in enumerate(self.kvalues):
-            self.k_var[i] = Slider(title=k['name'], value=k['value'], start=0.0, end=2.0, step=0.01)
-            
+            self.k_var[i] = Slider(title=k['name'], value=k['value'], start=0.0, end=self.kmax[i]['value'], step=0.01)            
             
     def signchange2D(self, a):
-        #print(a[300])
         asign = np.sign(a)
         return ((np.roll(asign, 1, axis=1) - asign) != 0).astype(int)
     
@@ -152,13 +168,14 @@ class plotter_bif:
         #plot_dR_dt = figure(plot_height=600, plot_width=600, title="Depletion/Aggregation Rate",
         #      #tools="crosshair,pan,reset,save,wheel_zoom",
         #      x_range=[self.Rmin, self.Rmax], y_range=[self.dRmin, self.dRmax], toolbar_location="above")
+        
 
-        plot_dR_dt = figure(plot_height=600, plot_width=600, title="Depletion/Aggregation Rate",
+        plot_dR_dt = figure(plot_height=800, plot_width=600, title="Depletion/Aggregation Rate",
               x_range=[self.Rmin, self.Rmax], y_range=[self.dRmin, self.dRmax])
         
         
-        plot_dR_dt.line('R', 'dR_dt_aggr', source=self.data_dR_dt_R, line_width=3, line_alpha=0.6)
-        plot_dR_dt.line('R', 'dR_dt_depl', source=self.data_dR_dt_R, line_width=3, line_alpha=0.6, color='red')
+        plot_dR_dt.line('R', 'dR_dt_aggr', source=self.data_dR_dt_R, line_width=3, line_alpha=0.6, color='steelblue')
+        plot_dR_dt.line('R', 'dR_dt_depl', source=self.data_dR_dt_R, line_width=3, line_alpha=0.6, color='crimson')
         #plot_dR_dt.line('R_ss_y', 'dR_dt_ss_y', source=self.data_dR_dt_R_lines, line_width=3, line_alpha=0.6, color='red', line_dash='4 4')
         
         #labels = LabelSet(x='R_ss', y='dR_dt_ss', text='lab', level='glyph',
@@ -175,17 +192,11 @@ class plotter_bif:
         
             
         #this part differs to original class 
-        plot_R_S= figure(plot_height=600, plot_width=600, title="Steady State Solutions",
+        plot_R_S= figure(plot_height=800, plot_width=600, title="Steady State Solutions",
                   x_range=[self.Smin, self.Smax], y_range=[self.Rmin, self.Rmax], toolbar_location="above")
         
-        for i, x in enumerate(self.tags_R_S):
-            s = x[0]
-            for j, y in enumerate(x[1:]):
-                if j%2 == 1:
-                    plot_R_S.line(x=s, y=y, source=self.data_R_S[i], line_width=3, line_alpha=0.6, line_dash='dotted')        
-                else:
-                    plot_R_S.line(x=s, y=y, source=self.data_R_S[i], line_width=3, line_alpha=0.6)        
-        #plot_R_S.circle(x='S_ss', y='R_ss', source=self.data_S_R_point, fill_color="white", size=10)
+        plot_R_S.line(x='S', y='R', source=self.data_R_S2, line_width=3, line_alpha=0.6, color='black')        
+        plot_R_S.line(x='S', y='R', source=self.data_R_S2_dotted, line_width=3, line_alpha=1.0, color='white', line_dash='4 4')        
         
         plot_R_S.yaxis.axis_label = "R_ss"
         plot_R_S.xaxis.axis_label = "S"
@@ -193,15 +204,15 @@ class plotter_bif:
         plot_R_S.toolbar.logo = None
         plot_R_S.toolbar_location = None
         
-        plot_wire = figure(plot_height=200, plot_width=200, x_range=(0,1), y_range=(0,1), title='Wire Diagramm')
+        plot_wire = figure(plot_height=300, plot_width=300, x_range=(0,1), y_range=(0,1), title='Wire Diagramm')
         plot_wire.image_url(url=[self.wire_url], x=0, y=1, w=1, h=1)
         
         plot_wire.toolbar.logo = None
         plot_wire.toolbar_location = None
         plot_wire.axis.visible = False
         
-        plot_formula = figure(plot_width=200, plot_height=120, x_range=(0,1), y_range=(0,1), title='Formulas')
-        plot_formula.image_url(url=[self.formula_url], x=0, y=1, w=1, h=1)
+        plot_formula = figure(plot_width=300, plot_height=self.imgheight, x_range=(0,1), y_range=(0,1), title='Formulas')
+        plot_formula.image_url(url=[self.formula_url], x=.01, y=.99, w=.99, h=.99)
         
         plot_formula.toolbar.logo = None
         plot_formula.toolbar_location = None
@@ -240,31 +251,28 @@ class plotter_bif:
         S_split = np.split(S_x, self.get_index_Scrit(RS))
         
         #implement a list of column_names and use that list with add to append datasource
-        for i, r in enumerate(R_split):
-            s = S_split[i]
-            tag = 's%i' % i
-            self.data_R_S[i].data[tag] = s
-            self.tags_R_S[i][0] = tag
-            for j, _r in  enumerate(r):
-                tag = 'r%i' % j
-                self.data_R_S[i].data[tag] = _r
-                self.tags_R_S[i][j+1] = tag
+        R = np.array([])
+        R_dotted = np.array([])
+        S = np.array([])
+        S_dotted = np.array([])
         
-        #implement a way to add or remove entries to the datastructure for changes in bifurcation number
+        for i, r_ in enumerate(R_split):
+            for j, r in enumerate(r_):
+                s = S_split[i]
+                _r = r
+                _s = s
+                if j%2 == 1:
+                    _r = np.flip(r, 0)
+                    _s = np.flip(s, 0)
+                    R_dotted = np.append(R_dotted, _r)
+                    S_dotted = np.append(S_dotted, _s)
+                R = np.append(R, _r)
+                S = np.append(S, _s)
+        self.data_R_S2.data["R"] = R
+        self.data_R_S2.data["S"] = S
+        self.data_R_S2_dotted.data["R"] = R_dotted
+        self.data_R_S2_dotted.data["S"] = S_dotted
         
-        #self.data_R_S = []
-        #self.tags_R_S = []
-        #for i, r in enumerate(R_split):
-        #    data_ = ColumnDataSource()
-        #    s = S_split[i]
-        #    tag = 's%i' % i
-        #    data_.add(s, tag)
-        #    self.tags_R_S.append([tag])
-        #    for j, _r in  enumerate(r):
-        #        tag = 'r%i' % j
-        #        data_.add(_r, tag)
-        #        self.tags_R_S[i].append(tag)
-        #    self.data_R_S.append(data_)
         
         #self.data_S_R_lines.data=dict(R_ss_y=[0, R_ss], S_ss_y=[self.S, self.S], #y parallel
         #                              R_ss_x=[R_ss, R_ss], S_ss_x=[0, self.S]) #x parallel
@@ -277,8 +285,8 @@ class plotter_bif:
         
         # Set up layouts and add to document
         plot_dR_dt, plot_R_S, plot_wire, plot_formula = self.create_figure()
-        l = row([column([plot_wire, plot_formula, widgetbox(self.S_var), widgetbox(self.k_var)]),
-                 plot_dR_dt, plot_R_S], sizing_mode='fixed', width=1500, height=600)
+        l = row([column([plot_wire, plot_formula, widgetbox(self.S_var), row([widgetbox(self.k_var[0::2], width=150), widgetbox(self.k_var[1::2], width=150)])]),
+                 plot_dR_dt, plot_R_S], sizing_mode='fixed', width=1500, height=800)
         doc.add_root(l)
     
     def show_notebook(self):

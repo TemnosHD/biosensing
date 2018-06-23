@@ -32,6 +32,6 @@ k = np.array([('R_T', 1.0), ('k1', 1.0), ('k2', 1.0), ('km1', 0.05), ('km2', 0.0
 
 c1 = plotter(aggregation, depletion, Rss, _S_0=1,
                  _kvalues=k, _wire_url='diagram1c/static/wire1c.png', _formula_url='diagram1c/static/diff1c.png',
-                _N=200, _Rmax=1, _Rmin=0, _Smax=3, _Smin=0, _title='Figure 1c')
+                _N=200, _Rmax=1, _Rmin=0, _Smax=3, _Smin=0, _title='Figure 1c', _imgheight=130)
 
 c1.show_server()

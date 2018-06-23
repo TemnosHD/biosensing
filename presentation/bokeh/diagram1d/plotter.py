@@ -14,7 +14,7 @@ output_notebook()
 #implement class plotter that plots everything that is necessary
 class plotter:
     def __init__(self, _aggr, _depl, _Rss, _S_0,
-                 _kvalues=np.ones(7), _kmax=np.array(7), _wire_url=0, _formula_url=0,
+                 _kvalues=np.ones(7), _kmax=0, _wire_url=0, _formula_url=0,
                 _N=200, _Rmax=2, _Rmin=0, _Smax=3, _Smin=0, _title='test', _imgheight=200):
         self.aggregation = _aggr
         self.depletion = _depl
@@ -30,7 +30,7 @@ class plotter:
         self.wire_url = _wire_url
         self.formula_url = _formula_url
         self.title = _title
-        if (_kmax.all==np.zeros(7)).all:
+        if (np.size(_kmax)==1):
             self.kmax=np.array(_kvalues)
             self.kmax[:]['value'] = self.kmax[:]['value']*2
         else:
@@ -40,16 +40,16 @@ class plotter:
         
         # Set up data
         R_x = np.linspace(self.Rmin, self.Rmax, self.N)
-        self.dRmin = np.max(self.depletion(R_x, self.kvalues))
-        dR_dt_depl = self.depletion(R_x, self.kvalues)
+        self.dRmin = np.max(self.depletion(R_x, self.S, self.kvalues))
+        dR_dt_depl = self.depletion(R_x, self.S, self.kvalues)
         dR_dt_aggr = self.aggregation(R_x, self.S, self.kvalues)
         R_ss = self.Rss(self.S, self.kvalues)
-        dR_dt_ss = self.depletion(R_ss, self.kvalues)
+        dR_dt_ss = self.depletion(R_ss, self.S, self.kvalues)
         self.dRmax = max(np.max(dR_dt_depl), np.max(dR_dt_aggr))
         self.dRmin = min(np.min(dR_dt_depl), np.min(dR_dt_aggr))
         
         self.data_dR_dt_R = ColumnDataSource(data=dict(R=R_x, dR_dt_depl=dR_dt_depl, dR_dt_aggr=dR_dt_aggr)) #graphs
-        self.data_dR_dt_R_lines = ColumnDataSource(data=dict(R_ss_y=[R_ss[0], R_ss[0]], dR_dt_ss_y=[0, self.depletion(R_ss[0], self.kvalues)]))#y parallel
+        self.data_dR_dt_R_lines = ColumnDataSource(data=dict(R_ss_y=[R_ss[0], R_ss[0]], dR_dt_ss_y=[0, self.depletion(R_ss[0], self.S, self.kvalues)]))#y parallel
         self.data_dR_dt_R_point_lab = ColumnDataSource(data=dict(R_ss=[R_ss], dR_dt_ss=[dR_dt_ss], lab=["R_ss = %.2f" % R_ss])) #label
         self.data_dR_dt_R_point = ColumnDataSource(data=dict(R_ss=R_ss, dR_dt_ss=dR_dt_ss)) #label
         #we need to separate this, since bokeh has problem with drawing circles from data in the label structure
@@ -137,14 +137,14 @@ class plotter:
     
         ## update curve
         R_x = np.linspace(self.Rmin, self.Rmax, self.N)
-        dR_dt_depl = self.depletion(R_x, self.kvalues)
+        dR_dt_depl = self.depletion(R_x, self.S, self.kvalues)
         dR_dt_aggr = self.aggregation(R_x, self.S, self.kvalues)
         R_ss = self.Rss(self.S, self.kvalues)
         
         self.data_dR_dt_R.data = dict(R=R_x, dR_dt_depl=dR_dt_depl, dR_dt_aggr=dR_dt_aggr) #graphs
-        self.data_dR_dt_R_lines.data = dict(R_ss_y=[R_ss[0], R_ss[0]], dR_dt_ss_y=[0, self.depletion(R_ss[0], self.kvalues)])#y parallel
-        self.data_dR_dt_R_point_lab.data = dict(R_ss=[R_ss], dR_dt_ss=[self.depletion(R_ss, self.kvalues)], lab=["R_ss = %.2f" % R_ss]) #label
-        self.data_dR_dt_R_point.data = dict(R_ss=R_ss, dR_dt_ss=self.depletion(R_ss, self.kvalues))
+        self.data_dR_dt_R_lines.data = dict(R_ss_y=[R_ss[0], R_ss[0]], dR_dt_ss_y=[0, self.depletion(R_ss[0], self.S, self.kvalues)])#y parallel
+        self.data_dR_dt_R_point_lab.data = dict(R_ss=[R_ss], dR_dt_ss=[self.depletion(R_ss, self.S, self.kvalues)], lab=["R_ss = %.2f" % R_ss]) #label
+        self.data_dR_dt_R_point.data = dict(R_ss=R_ss, dR_dt_ss=self.depletion(R_ss, self.S, self.kvalues))
           
         S = np.linspace(self.Smin, self.Smax, self.N)
         R_y = self.Rss(S, self.kvalues)
@@ -160,8 +160,8 @@ class plotter:
         
         # Set up layouts and add to document
         plot_dR_dt, plot_R_S, plot_wire, plot_formula = self.create_figure()
-        l = row([column([plot_wire, plot_formula, widgetbox(self.S_var), widgetbox(self.k_var)]),
-                 plot_dR_dt, plot_R_S], sizing_mode='fixed', width=1500, height=600)
+        l = row([column([plot_wire, plot_formula, widgetbox(self.S_var), row([widgetbox(self.k_var[0::2], width=150), widgetbox(self.k_var[1::2], width=150)])]),
+                 plot_dR_dt, plot_R_S], sizing_mode='fixed', width=1500, height=800)
         doc.add_root(l)
     
     def show_notebook(self):
