@@ -1,58 +1,26 @@
-# Jupyter Notebook + Reveal.js
+# Network Motifs
+### Presentation by Laura Martens & Arthur Heimbrecht
 
-## Introduction
+This is our presentation of 'Network Motifs' for Prof. Schwarz's Seminar 'Biophysics of Sensing, Signaling and Cell Fate Decisions' on June 23rd 2018. <br>
+Please read this README if you want to run the presentation on your local device.
 
-Microsoft PowerPoint is cool. I like it! It is like a Swiss army knife for consultants. You can make beautiful slides with it. When it comes to code though, PowerPoint sucks. Really! The solution is to use [reveal.js](http://lab.hakim.se/reveal-js/#/). It is cool. You can use Markdown to highlight code. It is responsive but like LaTeX, it can be tedious.
+## How to run the presentation
+The presentation uses `reveal.js` by Hakim El Hattab ([link](https://github.com/hakimel/reveal.js/) to git repo). <br>
+Also we used [Bokeh](https://bokeh.pydata.org/en/latest/) to visualize the plots for differential equations and made them interactive.
+Depending on which system you use, you maybe need to install [MAMPP]() or [XAMPP]() since reveal.js is based on a javascript framework.
+So basically this presentation works similar to a website. <br>
+At least on macOS this is not required and clicking on `presentation.html` opens the presentation.
+Still for the  full 'experience' additional software is required.
 
-Another way to use reveal.js is through Jupyter Notebook. You just create a notebook and then use `nbconvert` to get reveal.js slides as well. The standard output is however boring. I seriously mean it! This repo therefore tries to bridge this gap by using customized colors and images.
+## Bokeh
+Bokeh is an interactive visualization library for python, that we used to generate our plots.
+To install Bokeh we recommend [pip]() or [conda](). <br>
+The plots are generated in separate python files which are located in bokeh/diagramXY/ together with required images and the necessary file containing a plotter class.
+This is necessary due to the way Bokeh works.
+To run a plot simply  type `bokeh serve /path/to/diagramXY` into your console. <br>
+This command can be combined for all plots: `$ bokeh serve diagram1a diagram1b diagram1c diagram1d diagram1e diagram1f diagram2b diagram2c`
+Now you are good to go and can view the plots in the presentation.
+If they do not show up please check the port Bokeh uses.
 
-Moreover, we live in a cloud native world with a cloud native lifestyle, cloud native storage, cloud native solution. Why not having cloud native presentation slides then? This repo also solves this problem by simply using `cf push`.
-
-## Getting Started
-
-1. You can find a notebook template in the `static` folder which contains some examples like cover and divider slides, markdown syntax and many more. Here is a [link](http://www.slideviper.oquanta.info/tutorial/slideshow_tutorial_slides.html#/3) for a nice intro into creating slides with Jupyter notebook.
-2. When you are done with editing your notebook, you need to generate the slides with this command:
-    ```
-    # from ./jupyter2slides/
-    python create_slides.py --file static/presentation_template.ipynb
-    ```
-3. Now you can either call this command to serve the presentation on your local machine
-    ```
-    python run.py --file static/presentation_template.slides.html
-    ```
-    or just use `cf push` to push it to the cloud. I use Flask to serve those static files.
-
-4. To convert the slides to pdf, I use [decktape](https://github.com/astefanutti/decktape):
-    ```
-    cd decktape-1.0.0/
-    ./phantomjs decktape.js generic --keycode=Space "http://0.0.0.0:9099/" presentation_template.pdf
-    ```
-    or you can also use the [`?print-pdf`](https://github.com/hakimel/reveal.js/#pdf-export) option but this is not recommended as the formatting is not displayed correctly.
-
-#### Requirements:
-- Python 3.5.2
-- nbconvert 5.2.1
-- reveal.js 3.1.0
-
-#### Demo:
-- [Presentation Template](http://myslides-on-cf.cfapps.io/) | [PDF](https://www.slideshare.net/DatTran33/presentation-template-from-jupyter2slides)
-- [Interactive Template](http://interactive-slides.cfapps.io/) | [PDF](https://www.slideshare.net/DatTran33/interactive-slide-deck-jupyter2slides)
-
-## FAQ
-
-###### How can I change the color of the headline, text, links, list etc.?
-You can change everything in the `custom.css` file.
-
-###### How can I change the footer?
-If you need to change the footer, open `jupyter_template.tpl` and go to `Change footer here`.
-
-###### Where did you get the image and favicon?
-The image used for the cover slide is from [Pexel](https://www.pexels.com/) and the favicon is from [freefavicon](http://www.freefavicon.com/). They are both free to use.
-
-###### Does it work with other reveal.js version?
-Yes, but this is not recommended as the colors might be broken due to differences in the css styles.
-
-## Copyright
-
-See [LICENSE](LICENSE) for details.
-Copyright (c) 2016 [Dat Tran](http://www.dat-tran.com/).
+## Generate PDF
+To generate a PDF of the presentation please install [decktape]() from [npm]() and run `$ decktape presentation.html presentation.pdf --slides 1-46`.
